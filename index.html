@@ -1,0 +1,2736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#14213d">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="artifact-type" content="dashboard">
+  <meta name="design-style" content="charter">
+  <title>Revisão Pré-Prova: Direito Financeiro e Tributário (Unidades 07 a 12)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+
+      /* Page and surfaces (Charter) */
+      --background: #f7f4ec;
+      --surface-container-low: #fffdf8;
+      --surface-container: #ece5d4;
+      --surface-container-high: #e3dac4;
+
+      /* Ink */
+      --on-surface: #1c1f26;
+      --on-surface-variant: #4f5360;
+
+      /* Rules */
+      --outline: #b08d57;
+      --outline-variant: #d9cfb8;
+
+      /* Accents */
+      --primary: #14213d;
+      --on-primary: #f7f4ec;
+      --primary-container: #e3e6ee;
+      --on-primary-container: #14213d;
+      --secondary: #2d5a4a;
+      --tertiary: #8a6a35;
+      --error: #9b2c2c;
+      --on-error: #f7f4ec;
+
+      /* Data series */
+      --data-1: #14213d;
+      --data-2: #8a6a35;
+      --data-3: #2d5a4a;
+      --data-4: #5b7aa0;
+      --data-context: #c2bba9;
+
+      /* Fonts */
+      --font-headline: 'Libre Caslon Text', serif;
+      --font-body: 'Inter', sans-serif;
+      --font-label: 'Inter', sans-serif;
+
+      /* Shape */
+      --rounded: 0.125rem;
+      --rounded-lg: 0.125rem;
+      --rounded-full: 0.125rem;
+
+      /* Style effects */
+      --brass-rule: 2px solid var(--outline);
+      --hairline: 1px solid var(--outline-variant);
+      --leaf-underline: 0 1px 0 var(--outline-variant);
+
+      /* Semantic & surface tints */
+      --positive: #2d5a4a;
+      --warning: #8a6a35;
+      --focus: #14213d;
+      --positive-container: #e4ede9;
+      --warning-container: #f4ebd8;
+      --error-container: #f5e2e2;
+      --title-lede: color-mix(in srgb, var(--on-primary) 78%, var(--primary));
+      --title-kicker: color-mix(in srgb, var(--outline) 75%, var(--on-primary));
+      --primary-hover: color-mix(in srgb, var(--primary) 88%, var(--on-surface));
+      --focus-ring: 0 0 0 3px color-mix(in srgb, var(--focus) 24%, transparent);
+
+      /* Type scale (Dashboard / Data Explorer) */
+      --display-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+      --headline-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+      --subhead-size: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
+      --body-size: clamp(0.9375rem, 0.9rem + 0.15vw, 1rem);
+      --label-size: 0.75rem;
+
+      /* Spacing scale (4pt base) */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 6rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-long: 420ms;
+    }
+
+    /* Base reset */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+
+    .page-grid {
+      display: grid;
+      gap: var(--space-xl);
+      padding: var(--space-lg);
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .page-grid * { min-width: 0; }
+
+    /* Focus rings */
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Title Band (Charter Treatment #1 & #2) */
+    .title-band {
+      background: var(--primary);
+      color: var(--on-primary);
+      padding: var(--space-xl) var(--space-lg);
+      border-bottom: 3px solid var(--outline);
+    }
+    .title-band-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: end;
+    }
+    .title-kicker {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--title-kicker);
+      margin: 0 0 var(--space-sm);
+    }
+    .title-band h1 {
+      font-family: var(--font-headline);
+      font-weight: 400;
+      font-size: var(--display-size);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--on-primary);
+      margin: 0 0 var(--space-sm);
+      padding-bottom: var(--space-sm);
+      border-bottom: 1px solid var(--outline);
+    }
+    .title-band .lede {
+      color: var(--title-lede);
+      margin: 0;
+      max-width: 65ch;
+      font-size: var(--body-size);
+    }
+    .title-actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      align-items: flex-start;
+      justify-self: end;
+    }
+    .title-meta-note {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      letter-spacing: 0.04em;
+      color: var(--title-lede);
+      margin: 0;
+    }
+    .title-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    /* Typography helpers */
+    .label-caps {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--on-surface-variant);
+    }
+    .section-head {
+      border-top: var(--brass-rule);
+      padding-top: var(--space-md);
+      border-bottom: var(--hairline);
+      padding-bottom: var(--space-sm);
+      margin-bottom: var(--space-md);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-sm);
+    }
+    .section-head h2 {
+      font-family: var(--font-headline);
+      font-weight: 400;
+      font-size: var(--headline-size);
+      line-height: 1.15;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .section-subtitle {
+      font-size: var(--body-size);
+      color: var(--on-surface-variant);
+      margin: var(--space-xs) 0 0;
+      max-width: 68ch;
+    }
+
+    /* Buttons (Charter: 2px corners, no shadows) */
+    .btn {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 0.625rem 1rem;
+      min-height: 44px;
+      border-radius: var(--rounded);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-xs);
+      text-decoration: none;
+      transition: background-color var(--dur-micro) var(--ease-out),
+                  color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out);
+    }
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      border: 1px solid var(--primary);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--primary-hover);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--primary-container);
+    }
+    .btn-on-dark {
+      background: transparent;
+      color: var(--on-primary);
+      border: 1px solid var(--outline);
+    }
+    .btn-on-dark:hover:not(:disabled) {
+      background: color-mix(in srgb, var(--outline) 18%, var(--primary));
+    }
+    .btn-subtle {
+      background: var(--surface-container);
+      color: var(--on-surface);
+      border: 1px solid var(--outline-variant);
+    }
+    .btn-subtle:hover:not(:disabled) {
+      background: var(--surface-container-high);
+    }
+    .btn-positive {
+      background: var(--positive-container);
+      color: var(--positive);
+      border: 1px solid var(--positive);
+    }
+    .btn-danger-outline {
+      background: transparent;
+      color: var(--error);
+      border: 1px solid var(--error);
+    }
+    .btn-danger-outline:hover:not(:disabled) {
+      background: var(--error-container);
+    }
+
+    /* KPI Summary Strip (Charter #3 & #4) */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+    .figure-card {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      box-shadow: var(--leaf-underline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-xs);
+    }
+    .figure-value {
+      font-family: var(--font-headline);
+      font-weight: 400;
+      font-size: clamp(1.625rem, 1.3rem + 0.9vw, 2.125rem);
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums lining-nums;
+      color: var(--on-surface);
+      margin: var(--space-xs) 0 0;
+    }
+    .figure-delta {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--tertiary);
+      margin: 0;
+    }
+    .figure-delta.positive { color: var(--positive); }
+
+    /* Control & Cross-Filter Bar */
+    .control-bar {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      border-bottom: var(--hairline);
+      padding: var(--space-md) var(--space-lg);
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: var(--space-md);
+      align-items: end;
+    }
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+    .filter-btn {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      min-height: 44px;
+      padding: 0 var(--space-md);
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline-variant);
+      background: var(--surface-container-low);
+      color: var(--on-surface);
+      cursor: pointer;
+      transition: background-color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out),
+                  color var(--dur-micro) var(--ease-out);
+    }
+    .filter-btn:hover {
+      background: var(--surface-container);
+      border-color: var(--primary);
+    }
+    .filter-btn[aria-pressed="true"] {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+    }
+
+    .search-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .input-row {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: end;
+    }
+    .text-input, .select-input {
+      width: 100%;
+      min-height: 44px;
+      padding: 0.5rem 0.75rem;
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      color: var(--on-surface);
+      background: var(--surface-container-low);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      transition: border-color var(--dur-micro) var(--ease-out),
+                  box-shadow var(--dur-micro) var(--ease-out);
+    }
+    .select-input { padding-right: 2rem; }
+    .text-input:focus, .select-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: var(--focus-ring);
+    }
+
+    /* Quick Jump Index */
+    .quick-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: var(--hairline);
+      align-items: center;
+    }
+    .nav-link {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      text-decoration: none;
+      padding: var(--space-xs) 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color var(--dur-micro) var(--ease-out);
+    }
+    .nav-link:hover {
+      border-bottom-color: var(--outline);
+    }
+
+    /* Tags (squared stamp, Charter spec) */
+    .stamp-tag {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--rounded);
+      border: 1px solid var(--outline);
+      color: var(--tertiary);
+      background: transparent;
+    }
+    .stamp-tag.federal {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-container);
+    }
+    .stamp-tag.estadual {
+      border-color: var(--secondary);
+      color: var(--secondary);
+      background: var(--positive-container);
+    }
+    .stamp-tag.ponto-chave {
+      border-color: var(--tertiary);
+      color: var(--tertiary);
+      background: var(--warning-container);
+    }
+    .stamp-tag.excecao {
+      border-color: var(--error);
+      color: var(--error);
+      background: var(--error-container);
+    }
+
+    /* Tax Dossier Cards Grid */
+    .tax-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .tax-card {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      box-shadow: var(--leaf-underline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      transition: opacity var(--dur-short) var(--ease-out),
+                  transform var(--dur-short) var(--ease-out);
+    }
+    .tax-card.reviewed {
+      border-top-color: var(--positive);
+    }
+    .tax-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: var(--hairline);
+    }
+    .tax-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .tax-sigla-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .tax-card h3 {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: var(--subhead-size);
+      line-height: 1.25;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .tax-specs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-sm) var(--space-md);
+      padding: var(--space-sm) 0;
+      border-bottom: var(--hairline);
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .spec-value {
+      font-size: 0.875rem;
+      color: var(--on-surface);
+    }
+
+    /* ATENCAO - PONTO-CHAVE Priority Callout */
+    .ponto-chave-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .ponto-chave-box {
+      background: var(--warning-container);
+      border-left: 3px solid var(--tertiary);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: var(--rounded);
+    }
+    .ponto-chave-title {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--tertiary);
+      margin: 0 0 var(--space-xs);
+    }
+    .ponto-chave-text {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--on-surface);
+    }
+
+    /* Practical Rules Drawer / Expandable */
+    .rules-toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      padding-top: var(--space-xs);
+    }
+    .rules-drawer {
+      border-top: var(--hairline);
+      padding-top: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .rules-drawer[hidden] { display: none; }
+    .rules-list {
+      margin: 0;
+      padding-left: 1.125rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .rules-list li {
+      font-size: 0.9rem;
+      color: var(--on-surface);
+    }
+
+    /* Comparison Table (Charter habitat) */
+    .table-card {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      box-shadow: var(--leaf-underline);
+      border-radius: var(--rounded-lg);
+      overflow: hidden;
+    }
+    .table-toolbar {
+      padding: var(--space-md) var(--space-lg);
+      border-bottom: var(--hairline);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+    }
+    .table-scroll {
+      overflow-x: auto;
+      width: 100%;
+    }
+    table.charter-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    table.charter-table thead th {
+      background: var(--surface-container-high);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--on-surface);
+      padding: 0.75rem var(--space-md);
+      border-bottom: var(--brass-rule);
+      white-space: nowrap;
+    }
+    table.charter-table tbody td {
+      padding: 0.75rem var(--space-md);
+      border-bottom: var(--hairline);
+      vertical-align: top;
+      color: var(--on-surface);
+    }
+    table.charter-table tbody tr:hover {
+      background: var(--surface-container);
+    }
+    table.charter-table tbody tr.is-highlighted {
+      background: var(--primary-container);
+    }
+    .num-col {
+      font-variant-numeric: tabular-nums lining-nums;
+      text-align: right;
+    }
+
+    /* Jurisprudence Explorer */
+    .juris-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+    .juris-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .juris-card {
+      background: var(--surface-container-low);
+      border-top: 2px solid var(--primary);
+      box-shadow: var(--leaf-underline);
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+    .juris-card.is-stj { border-top-color: var(--secondary); }
+    .juris-card.is-carf { border-top-color: var(--tertiary); }
+    .juris-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .juris-ref {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+      margin: 0;
+    }
+    .juris-tese {
+      font-size: 0.9rem;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .juris-nota {
+      font-size: 0.8125rem;
+      color: var(--on-surface-variant);
+      margin: var(--space-xs) 0 0;
+      padding-top: var(--space-xs);
+      border-top: var(--hairline);
+    }
+
+    /* Practice Section: Asymmetric 2-Column Layout (Simulado + Flashcards) */
+    .practice-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .panel-leaf {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      box-shadow: var(--leaf-underline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .panel-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      padding-bottom: var(--space-sm);
+      border-bottom: var(--hairline);
+    }
+    .panel-header-row h3 {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: var(--subhead-size);
+      margin: 0;
+    }
+
+    /* Quiz Styling */
+    .quiz-progress-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-variant-numeric: tabular-nums;
+    }
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: var(--surface-container);
+      border-radius: var(--rounded);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      transition: width var(--dur-short) var(--ease-out);
+    }
+    .quiz-question-text {
+      font-family: var(--font-headline);
+      font-size: 1.125rem;
+      line-height: 1.4;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+    .quiz-option {
+      width: 100%;
+      min-height: 44px;
+      text-align: left;
+      padding: 0.75rem var(--space-md);
+      background: var(--background);
+      border: 1px solid var(--outline-variant);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      line-height: 1.45;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      transition: background-color var(--dur-micro) var(--ease-out),
+                  border-color var(--dur-micro) var(--ease-out);
+    }
+    .quiz-option:hover:not(:disabled) {
+      background: var(--surface-container);
+      border-color: var(--primary);
+    }
+    .quiz-option.selected-correct {
+      background: var(--positive-container);
+      border-color: var(--positive);
+      color: var(--on-surface);
+      font-weight: 600;
+    }
+    .quiz-option.selected-wrong {
+      background: var(--error-container);
+      border-color: var(--error);
+      color: var(--on-surface);
+    }
+    .quiz-option.reveal-correct {
+      background: var(--positive-container);
+      border-color: var(--positive);
+    }
+    .quiz-letter {
+      font-family: var(--font-label);
+      font-weight: 700;
+      font-size: var(--label-size);
+      min-width: 1.5rem;
+      padding-top: 2px;
+      color: var(--primary);
+    }
+    .quiz-feedback {
+      padding: var(--space-md);
+      border-radius: var(--rounded);
+      border-left: 3px solid var(--primary);
+      background: var(--surface-container);
+      font-size: 0.9rem;
+    }
+    .quiz-feedback.is-correct {
+      background: var(--positive-container);
+      border-left-color: var(--positive);
+    }
+    .quiz-feedback.is-wrong {
+      background: var(--error-container);
+      border-left-color: var(--error);
+    }
+    .quiz-nav-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+      border-top: var(--hairline);
+    }
+
+    /* Flashcards Styling */
+    .flashcard-stage {
+      background: var(--background);
+      border: 1px solid var(--outline-variant);
+      border-top: var(--brass-rule);
+      padding: var(--space-lg);
+      border-radius: var(--rounded);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+    .flashcard-face-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--tertiary);
+    }
+    .flashcard-face-label.is-answer {
+      color: var(--positive);
+    }
+    .flashcard-prompt {
+      font-family: var(--font-headline);
+      font-size: 1.125rem;
+      line-height: 1.4;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .flashcard-answer {
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--on-surface);
+      margin: 0;
+    }
+    .flashcard-cite {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      margin: var(--space-xs) 0 0;
+    }
+    .flashcard-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Empty State */
+    .empty-state {
+      background: var(--surface-container-low);
+      border-top: var(--brass-rule);
+      padding: var(--space-xl);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      align-items: flex-start;
+    }
+
+    /* Inline Status Toast */
+    .status-banner {
+      padding: var(--space-sm) var(--space-md);
+      background: var(--positive-container);
+      border-left: 3px solid var(--positive);
+      color: var(--on-surface);
+      font-size: 0.875rem;
+      border-radius: var(--rounded);
+    }
+    .status-banner[hidden] { display: none; }
+
+    /* Footer */
+    .site-footer {
+      border-top: var(--brass-rule);
+      padding: var(--space-lg) 0 var(--space-xl);
+      color: var(--on-surface-variant);
+      font-size: 0.875rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: var(--space-md);
+    }
+
+    /* Container queries for dense components */
+    .tax-card-wrap { container-type: inline-size; }
+    @container (max-width: 460px) {
+      .tax-specs { grid-template-columns: 1fr; }
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 960px) {
+      .title-band-inner { grid-template-columns: 1fr; }
+      .title-actions { justify-self: start; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .control-bar { grid-template-columns: 1fr; }
+      .tax-grid { grid-template-columns: 1fr; }
+      .practice-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .page-grid {
+        grid-template-columns: 1fr;
+        padding: var(--space-md);
+        gap: var(--space-lg);
+      }
+      .title-band { padding: var(--space-lg) var(--space-md); }
+      .kpi-grid { grid-template-columns: 1fr; }
+      .tax-specs { grid-template-columns: 1fr; }
+      body { padding: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ===== Revisão editorial: visual moderno e fluido ===== */
+    :root { --rounded: .625rem; --rounded-lg: 1rem; --rounded-full: 999px;
+      --shadow-1: 0 1px 2px rgb(20 33 61 / .06), 0 6px 18px rgb(20 33 61 / .07);
+      --shadow-2: 0 4px 8px rgb(20 33 61 / .10), 0 16px 36px rgb(20 33 61 / .16); }
+    html { scroll-behavior: smooth; }
+    body { background: radial-gradient(1100px 480px at 90% -8%, #efe6cf 0, transparent 62%), var(--background); }
+    section[id] { scroll-margin-top: 5rem; }
+    .page-grid { display: flex; flex-direction: column; overflow: visible; }
+    .title-band { border-radius: 0 0 1.75rem 1.75rem; }
+    .figure-card, .tax-card, .juris-card, .panel-leaf, .table-card, .control-bar, .empty-state { border-radius: var(--rounded-lg); box-shadow: var(--shadow-1); }
+    .btn { border-radius: var(--rounded); }
+    .btn:active:not(:disabled) { transform: scale(.97); }
+    .filter-btn, .stamp-tag, .nav-link { border-radius: 999px; }
+    .text-input, .select-input { border-radius: var(--rounded); }
+    .figure-card { position: relative; overflow: hidden; }
+    .figure-card::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: calc(var(--p, 0) * 100%); background: var(--outline); transition: width var(--dur-long) var(--ease-out); }
+    .figure-value { font-variant-numeric: tabular-nums; }
+    .quick-nav { position: sticky; top: .5rem; z-index: 20; display: flex; flex-wrap: nowrap; gap: .375rem; align-items: center; overflow-x: auto; scrollbar-width: none; padding: .5rem .75rem; background: color-mix(in srgb, var(--surface-container-low) 80%, transparent); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); border: 1px solid var(--outline-variant); border-radius: 999px; box-shadow: var(--shadow-1); }
+    .quick-nav::-webkit-scrollbar { display: none; }
+    .quick-nav .label-caps, .nav-link { white-space: nowrap; }
+    .nav-link { padding: .375rem .875rem; border: 1px solid transparent; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
+    .nav-link:hover { background: var(--surface-container); }
+    .nav-link.is-active { background: var(--primary); color: var(--on-primary); }
+    .rules-drawer { display: grid; grid-template-rows: 0fr; gap: 0; padding-top: 0; border-top: 0; opacity: 0; visibility: hidden; transition: grid-template-rows var(--dur-long) var(--ease-out), opacity var(--dur-short) var(--ease-out), visibility 0s var(--dur-long); }
+    .rules-drawer.is-open { grid-template-rows: 1fr; opacity: 1; visibility: visible; transition-delay: 0s; }
+    .rules-inner { overflow: hidden; min-height: 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+    .rules-drawer.is-open .rules-inner { border-top: var(--hairline); padding-top: var(--space-md); }
+    .table-scroll { max-height: 70vh; overflow: auto; }
+    table.charter-table thead th { position: sticky; top: 0; z-index: 2; }
+    table.charter-table thead th:first-child, table.charter-table tbody td:first-child { position: sticky; left: 0; background: var(--surface-container-low); z-index: 1; }
+    table.charter-table thead th:first-child { z-index: 3; background: var(--surface-container); }
+    table.charter-table tbody tr.is-highlighted td:first-child { background: var(--warning-container); }
+    .quiz-option { border-radius: var(--rounded-lg); }
+    .quiz-option:active:not([aria-disabled="true"]) { transform: scale(.99); }
+    .quiz-option[aria-disabled="true"] { pointer-events: none; }
+    .quiz-option.selected-wrong { animation: nudge .3s var(--ease-out); }
+    .quiz-feedback { border-radius: var(--rounded-lg); animation: rise var(--dur-short) var(--ease-out); }
+    @keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+    @keyframes nudge { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+    .flashcard-stage { padding: 0; border: 0; background: none; min-height: 0; display: block; perspective: 1400px; }
+    .fc-inner { display: grid; min-height: 260px; transform-style: preserve-3d; transition: transform .6s var(--ease-out); }
+    .fc-inner.is-flipped { transform: rotateY(180deg); }
+    .fc-face { grid-area: 1 / 1; display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md); padding: var(--space-lg); background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-top: var(--brass-rule); border-radius: var(--rounded-lg); box-shadow: var(--shadow-1); backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .fc-back { transform: rotateY(180deg); background: var(--primary-container); }
+    .fc-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm); }
+    .status-banner { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%); z-index: 50; max-width: min(92vw, 560px); border-radius: 999px; box-shadow: var(--shadow-2); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .fc-inner { transition: none; } }
+
+    /* ===== Ajustes para smartphone ===== */
+    html { -webkit-text-size-adjust: 100%; }
+    body { -webkit-tap-highlight-color: transparent; }
+    button, a, select { touch-action: manipulation; }
+    @media (max-width: 640px) {
+      .page-grid { gap: var(--space-lg); padding: var(--space-md) max(var(--space-md), env(safe-area-inset-right)) calc(var(--space-xl) + env(safe-area-inset-bottom)) max(var(--space-md), env(safe-area-inset-left)); }
+      .title-band { padding: calc(var(--space-lg) + env(safe-area-inset-top)) max(var(--space-md), env(safe-area-inset-right)) var(--space-lg) max(var(--space-md), env(safe-area-inset-left)); border-radius: 0 0 1.25rem 1.25rem; }
+      .title-band h1 { font-size: 1.5rem; line-height: 1.2; }
+      .title-band .lede { font-size: .9375rem; }
+      .title-btn-row .btn { flex: 1 1 0; text-align: center; }
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); }
+      .figure-card { padding: var(--space-md); }
+      .figure-value { font-size: 1.5rem; }
+      .quick-nav { top: max(.25rem, env(safe-area-inset-top)); scroll-snap-type: x proximity; }
+      .quick-nav .label-caps { display: none; }
+      .nav-link { display: inline-flex; align-items: center; min-height: 40px; scroll-snap-align: center; }
+      .control-bar { grid-template-columns: 1fr; padding: var(--space-md); }
+      .filter-group .filter-row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+      .filter-group .filter-row::-webkit-scrollbar { display: none; }
+      .filter-btn { flex: 0 0 auto; white-space: nowrap; }
+      .text-input, .select-input { font-size: 16px; }
+      .section-head { flex-direction: column; align-items: stretch; }
+      .section-head h2 { font-size: 1.25rem; }
+      .section-head .btn, .tax-card-header .btn, .rules-toggle-row .btn { width: 100%; }
+      .tax-card-header { flex-direction: column; }
+      .table-toolbar { padding: var(--space-md); }
+      .table-scroll { max-height: none; overflow: visible; }
+      table.charter-table, table.charter-table tbody { display: block; }
+      table.charter-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      table.charter-table tbody tr, table.charter-table tbody tr:hover { display: block; margin: 0 0 var(--space-md); padding: var(--space-md); background: var(--surface-container-low); border: 1px solid var(--outline-variant); border-radius: var(--rounded-lg); box-shadow: var(--shadow-1); }
+      table.charter-table tbody tr.is-highlighted, table.charter-table tbody tr.is-highlighted:hover { background: var(--warning-container); border-color: var(--outline); }
+      table.charter-table tbody td { display: block; position: static !important; background: none !important; border: 0; padding: var(--space-xs) 0; }
+      table.charter-table tbody td::before { content: attr(data-label); display: block; margin-bottom: 2px; font-size: var(--label-size); font-weight: 600; color: var(--on-surface-variant); }
+      table.charter-table tbody td:first-child { margin-bottom: var(--space-xs); padding-bottom: var(--space-sm); font-size: 1.0625rem; border-bottom: var(--hairline); }
+      table.charter-table tbody td:first-child::before { display: none; }
+      .panel-leaf { padding: var(--space-md); }
+      .panel-header-row .filter-row { width: 100%; flex-wrap: nowrap; }
+      .panel-header-row .select-input { width: 100% !important; }
+      .quiz-option { padding: .875rem var(--space-md); font-size: 1rem; }
+      .quiz-nav-row { flex-direction: column; align-items: stretch; }
+      .quiz-nav-row .filter-row { display: grid; grid-template-columns: 1fr 1fr; }
+      .quiz-nav-row .btn, .quiz-feedback .btn { width: 100%; }
+      .quiz-feedback .btn { margin-top: var(--space-sm); }
+      .fc-inner { min-height: 230px; }
+      .fc-face { padding: var(--space-md); }
+      .flashcard-controls { flex-direction: column; align-items: stretch; }
+      .flashcard-controls .filter-row { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: var(--space-xs); }
+      .flashcard-controls .btn { width: 100%; padding-inline: .5rem; }
+      .status-banner { width: calc(100% - 2rem); bottom: calc(1rem + env(safe-area-inset-bottom)); border-radius: var(--rounded-lg); }
+      .site-footer { flex-direction: column; }
+    }
+    @media (max-width: 380px) { .figure-value { font-size: 1.25rem; } .title-band h1 { font-size: 1.3rem; } }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <header class="title-band">
+    <div class="title-band-inner">
+      <div>
+        <p class="title-kicker">Direito Financeiro e Tributário · Unidades 07 a 12</p>
+        <h1>Painel de Revisão Pré-Prova: Impostos em Espécie</h1>
+        <p class="lede">Guia interativo de fixação para ITCMD, IPVA, ICMS, Imposto de Importação, Imposto de Exportação e Imposto de Renda — com pontos-chave prioritários, súmulas, temas repetitivos e simulado imediato.</p>
+      </div>
+      <div class="title-actions">
+        <p class="title-meta-note" id="sync-status-label">Progresso salvo neste navegador</p>
+        <div class="title-btn-row">
+          <button type="button" class="btn btn-on-dark" onclick="exportStudySummary()">Exportar resumo (.txt)</button>
+          <button type="button" class="btn btn-on-dark" id="btn-install" hidden>Instalar app</button>
+          <button type="button" class="btn btn-on-dark" id="btn-reset-all" onclick="resetAllProgress(this)">Zerar progresso</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-grid">
+    <!-- Status message for inline feedback -->
+    <div id="global-status-banner" class="status-banner" hidden role="status" aria-live="polite"></div>
+
+    <!-- Top KPI Summary Cards -->
+    <section aria-label="Indicadores de preparo para a prova">
+      <div class="kpi-grid">
+        <article class="figure-card">
+          <span class="label-caps">Impostos Revisados</span>
+          <p class="figure-value" id="kpi-reviewed">0 / 6</p>
+          <p class="figure-delta" id="kpi-reviewed-note">3 Estaduais · 3 Federais</p>
+        </article>
+        <article class="figure-card">
+          <span class="label-caps">Jurisprudência &amp; Súmulas</span>
+          <p class="figure-value" id="kpi-juris">36</p>
+          <p class="figure-delta">STF, STJ e Súmula CARF</p>
+        </article>
+        <article class="figure-card">
+          <span class="label-caps">Pegadinhas Dominadas</span>
+          <p class="figure-value" id="kpi-cards">0 / 12</p>
+          <p class="figure-delta" id="kpi-cards-note">Cartões de fixação rápida</p>
+        </article>
+        <article class="figure-card">
+          <span class="label-caps">Desempenho no Simulado</span>
+          <p class="figure-value" id="kpi-quiz">0%</p>
+          <p class="figure-delta" id="kpi-quiz-note">0 de 12 questões respondidas</p>
+        </article>
+      </div>
+    </section>
+
+      <nav class="quick-nav" aria-label="Atalhos de seção">
+      <span class="label-caps">Ir para:</span>
+      <a class="nav-link" href="#secao-fichas">1. Fichas &amp; Pontos-Chave</a>
+      <a class="nav-link" href="#secao-quadro">2. Quadro Comparativo &amp; EC 132</a>
+      <a class="nav-link" href="#secao-juris">3. Súmulas &amp; Temas</a>
+      <a class="nav-link" href="#secao-treino">4. Simulado &amp; Pegadinhas</a>
+    </nav>
+
+    <!-- Global Cross-Filter & Navigation -->
+    <section aria-label="Filtros globais e navegação rápida">
+
+      <div class="control-bar" style="margin-top: var(--space-md);">
+        <div class="filter-group">
+          <span class="label-caps">Filtrar por Imposto ou Competência (atualiza Fichas, Quadro e Súmulas)</span>
+          <div class="filter-row" role="group" aria-label="Filtro por imposto">
+            <button type="button" class="filter-btn" data-tax-filter="ALL" aria-pressed="true" onclick="setTaxFilter('ALL')">Todos (6)</button>
+            <button type="button" class="filter-btn" data-tax-filter="ESTADUAIS" aria-pressed="false" onclick="setTaxFilter('ESTADUAIS')">Estaduais (RS/DF)</button>
+            <button type="button" class="filter-btn" data-tax-filter="FEDERAIS" aria-pressed="false" onclick="setTaxFilter('FEDERAIS')">Federais</button>
+            <button type="button" class="filter-btn" data-tax-filter="ITCMD" aria-pressed="false" onclick="setTaxFilter('ITCMD')">ITCMD</button>
+            <button type="button" class="filter-btn" data-tax-filter="IPVA" aria-pressed="false" onclick="setTaxFilter('IPVA')">IPVA</button>
+            <button type="button" class="filter-btn" data-tax-filter="ICMS" aria-pressed="false" onclick="setTaxFilter('ICMS')">ICMS</button>
+            <button type="button" class="filter-btn" data-tax-filter="II" aria-pressed="false" onclick="setTaxFilter('II')">II</button>
+            <button type="button" class="filter-btn" data-tax-filter="IE" aria-pressed="false" onclick="setTaxFilter('IE')">IE</button>
+            <button type="button" class="filter-btn" data-tax-filter="IR" aria-pressed="false" onclick="setTaxFilter('IR')">IR</button>
+          </div>
+        </div>
+        <div class="search-field-group">
+          <label class="label-caps" for="global-search">Busca rápida (súmula, tema, regra ou palavra-chave)</label>
+          <div class="input-row">
+            <input type="search" id="global-search" class="text-input" placeholder="Ex.: saisine, EC 132, 166, férias, Siscomex…" oninput="handleSearchInput(this.value)">
+            <button type="button" class="btn btn-subtle" onclick="clearGlobalFilters()">Limpar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Tax Dossier Cards -->
+    <section id="secao-fichas" aria-labelledby="heading-fichas">
+      <div class="section-head">
+        <div>
+          <h2 id="heading-fichas">1. Fichas Estratégicas e Pontos-Chave Prioritários</h2>
+          <p class="section-subtitle">Cada imposto reúne competência, fato gerador, base de cálculo, destaques de estudo prioritário (<em>Atenção — Ponto-Chave</em>) e regras práticas aplicáveis ao Rio Grande do Sul e à União.</p>
+        </div>
+        <button type="button" class="btn btn-secondary" id="btn-toggle-all-rules" onclick="toggleAllDrawers()">Expandir todas as regras</button>
+      </div>
+      <div id="tax-cards-container" class="tax-grid"></div>
+    </section>
+
+    <!-- Section 2: Comparative Table & Constitutional Rules -->
+    <section id="secao-quadro" aria-labelledby="heading-quadro">
+      <div class="section-head">
+        <div>
+          <h2 id="heading-quadro">2. Quadro Comparativo, Anterioridade e Reforma (EC 132/2023)</h2>
+          <p class="section-subtitle">Comparação lateral dos elementos estruturais, exceções constitucionais à anterioridade e noventena, competência do Executivo para alterar alíquotas e marcos da Reforma Tributária.</p>
+        </div>
+      </div>
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div class="filter-row" role="group" aria-label="Destaque no quadro comparativo">
+            <span class="label-caps">Destacar:</span>
+            <button type="button" class="filter-btn" data-matrix-mode="ALL" aria-pressed="true" onclick="setMatrixMode('ALL')">Visão completa</button>
+            <button type="button" class="filter-btn" data-matrix-mode="ANTERIORIDADE" aria-pressed="false" onclick="setMatrixMode('ANTERIORIDADE')">Exceções à Anterioridade / Noventena</button>
+            <button type="button" class="filter-btn" data-matrix-mode="REFORMA" aria-pressed="false" onclick="setMatrixMode('REFORMA')">Mudanças EC 132/2023 e LC 204/2023</button>
+          </div>
+          <span class="label-caps" id="matrix-count-label">Exibindo 6 impostos</span>
+        </div>
+        <div class="table-scroll">
+          <table class="charter-table">
+            <thead>
+              <tr>
+                <th scope="col">Imposto</th>
+                <th scope="col">Fato Gerador &amp; Momento</th>
+                <th scope="col">Base de Cálculo</th>
+                <th scope="col">Alíquotas &amp; Alteração</th>
+                <th scope="col">Anterioridade / Noventena</th>
+                <th scope="col">Exceções, Imunidades &amp; Reforma</th>
+              </tr>
+            </thead>
+            <tbody id="matrix-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Jurisprudence & Sumulas Explorer -->
+    <section id="secao-juris" aria-labelledby="heading-juris">
+      <div class="section-head">
+        <div>
+          <h2 id="heading-juris">3. Explorador de Súmulas, Temas e Precedentes Essenciais</h2>
+          <p class="section-subtitle">Jurisprudência vinculante, repetitiva e enunciados sumulares cobrados com frequência nas avaliações, filtráveis por Tribunal e tributo.</p>
+        </div>
+        <span class="label-caps" id="juris-count-label">36 precedentes exibidos</span>
+      </div>
+      <div class="juris-toolbar">
+        <div class="filter-row" role="group" aria-label="Filtro por Tribunal">
+          <span class="label-caps">Tribunal:</span>
+          <button type="button" class="filter-btn" data-tribunal="ALL" aria-pressed="true" onclick="setTribunalFilter('ALL')">Todos</button>
+          <button type="button" class="filter-btn" data-tribunal="STF" aria-pressed="false" onclick="setTribunalFilter('STF')">STF</button>
+          <button type="button" class="filter-btn" data-tribunal="STJ" aria-pressed="false" onclick="setTribunalFilter('STJ')">STJ</button>
+          <button type="button" class="filter-btn" data-tribunal="CARF" aria-pressed="false" onclick="setTribunalFilter('CARF')">CARF</button>
+        </div>
+      </div>
+      <div id="juris-container" class="juris-grid"></div>
+    </section>
+
+    <!-- Section 4: Practice & Active Recall -->
+    <section id="secao-treino" aria-labelledby="heading-treino">
+      <div class="section-head">
+        <div>
+          <h2 id="heading-treino">4. Mecanismos de Fixação Rápida e Simulado Pré-Prova</h2>
+          <p class="section-subtitle">Teste sua precisão nas pegadinhas mais comuns de prova (à esquerda) e fixe a regra prática por recuperação ativa nos cartões (à direita).</p>
+        </div>
+      </div>
+      <div class="practice-grid">
+        <!-- Quiz Panel -->
+        <article class="panel-leaf" aria-labelledby="quiz-panel-title">
+          <div class="panel-header-row">
+            <div>
+              <h3 id="quiz-panel-title">Simulado Relâmpago (12 Questões)</h3>
+            </div>
+            <div class="filter-row">
+              <label class="label-caps" for="quiz-tax-select">Foco:</label>
+              <select id="quiz-tax-select" class="select-input" style="width: auto; min-height: 44px;" onchange="setQuizTaxFilter(this.value)">
+                <option value="ALL">Todos os impostos (12)</option>
+                <option value="ITCMD">ITCMD (2)</option>
+                <option value="IPVA">IPVA (2)</option>
+                <option value="ICMS">ICMS (2)</option>
+                <option value="II">Imposto de Importação (2)</option>
+                <option value="IE">Imposto de Exportação (2)</option>
+                <option value="IR">Imposto de Renda (2)</option>
+                <option value="WRONG">Somente questões erradas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="quiz-progress-row">
+            <span id="quiz-counter">Questão 1 de 12</span>
+            <span id="quiz-score-inline">0 acertos · 0 respondidas</span>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="quiz-progress-bar" style="width: 8%;"></div>
+          </div>
+
+          <div id="quiz-stage"></div>
+
+          <div class="quiz-nav-row">
+            <div class="filter-row">
+              <button type="button" class="btn btn-secondary" id="btn-quiz-prev" onclick="prevQuestion()">Anterior</button>
+              <button type="button" class="btn btn-primary" id="btn-quiz-next" onclick="nextQuestion()">Próxima questão</button>
+            </div>
+            <button type="button" class="btn btn-danger-outline" id="btn-quiz-reset" onclick="resetQuiz(this)">Reiniciar simulado</button>
+          </div>
+        </article>
+
+        <!-- Flashcards Panel -->
+        <article class="panel-leaf" aria-labelledby="flashcard-panel-title">
+          <div class="panel-header-row">
+            <div>
+              <h3 id="flashcard-panel-title">Baralho de Pegadinhas (12 Cartões)</h3>
+            </div>
+            <span class="label-caps" id="flashcard-counter">1 / 12</span>
+          </div>
+
+          <div class="filter-row" role="group" aria-label="Filtro de cartões">
+            <button type="button" class="filter-btn" data-card-mode="ALL" aria-pressed="true" onclick="setFlashcardMode('ALL')">Todos</button>
+            <button type="button" class="filter-btn" data-card-mode="PENDING" aria-pressed="false" onclick="setFlashcardMode('PENDING')">A revisar</button>
+          </div>
+
+          <div id="flashcard-stage" class="flashcard-stage"></div>
+
+          <div class="flashcard-controls">
+            <div class="filter-row">
+              <button type="button" class="btn btn-secondary" id="btn-card-prev" onclick="prevFlashcard()">Anterior</button>
+              <button type="button" class="btn btn-primary" id="btn-card-flip" onclick="flipFlashcard()">Ver regra prática</button>
+              <button type="button" class="btn btn-secondary" id="btn-card-next" onclick="nextFlashcard()">Próximo</button>
+            </div>
+          </div>
+          <div class="flashcard-controls" style="border-top: var(--hairline); padding-top: var(--space-sm);">
+            <button type="button" class="btn btn-positive" id="btn-card-master" onclick="toggleCardMastered()">Marcar como dominado</button>
+            <span class="label-caps" id="flashcard-master-status">Pendente de revisão</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>Baseado integralmente no Resumão Pré-Prova de Direito Financeiro e Tributário (Unidades 07 a 12 — Faculdade de Ciências Jurídicas de Santa Maria) e na legislação e jurisprudência nele referidas (CF/88, CTN, EC 132/2023, LC 87/96, LC 204/2023, Leis RS nº 8.821/89 e nº 8.115/85, STF, STJ e CARF).</span>
+      <span class="label-caps">Material de apoio orientador para prova</span>
+    </footer>
+  </main>
+
+    <script>
+    // =========================================================================
+    // 1. DADOS ESTRUTURADOS (100% ancorados na fonte)
+    // =========================================================================
+
+    const TAXES = [
+      {
+        id: 'ITCMD',
+        sigla: 'ITCMD / ITCD',
+        nome: `Imposto sobre Transmissão Causa Mortis e Doação`,
+        esfera: 'Estadual / DF',
+        esferaKey: 'ESTADUAIS',
+        funcao: 'Fiscal',
+        cf: `Art. 155, I, da CF/88`,
+        legislacao: `RS: Lei Estadual nº 8.821/89 · Teto: Resolução Senado nº 9/92`,
+        fatoGerador: `Transmissão não onerosa de bens ou direitos por sucessão legítima ou testamentária (inclusive provisória) ou por doação. Tantos fatos geradores quantos forem os herdeiros, legatários ou donatários.`,
+        momentoFG: `Abertura da sucessão (data do óbito — saisine) na causa mortis; registro (imóvel) ou tradição (móvel) na doação.`,
+        baseCalculo: `Valor venal (de mercado) dos bens e direitos (avaliação da Fazenda ou judicial). Imóveis não podem ficar abaixo do IPTU ou ITR. Prazo de 20 dias para avaliação contraditória.`,
+        aliquotas: `Máxima de 8% (Senado). Estado deve fixar em lei própria. RS: 0% a 6% (causa mortis) e 3% a 4% (doação).`,
+        sujeitos: `Causa mortis: herdeiro ou legatário. Doação: doador domiciliado no país (ou donatário, se doador no exterior), com responsabilidade solidária.`,
+        anterioridade: {
+          exercicio: 'Observa',
+          noventena: 'Observa',
+          detalhe: `Observa regra geral constitucional (sem exceção expressa no art. 150, § 1º, CF).`
+        },
+        reforma: `EC 132/2023 constitucionalizou a progressividade pelo valor (art. 155, § 1º, VI, CF) e ampliou imunidades para projetos socioambientais, instituições federais de ensino e sem fins lucrativos (art. 155, § 1º, V e VII, CF).`,
+        pontosChave: [
+          {
+            titulo: `Alíquota da data do óbito (Súmulas 112 a 115 STF)`,
+            texto: `O ITCMD é devido pela alíquota vigente ao tempo da abertura da sucessão (data do óbito), e não da abertura ou conclusão do inventário (Súmula 112 STF; REsp 1.142.872 STJ) — consequência direta do princípio da saisine (art. 1.784 CC; partilha é meramente declaratória). Cálculo sobre o valor dos bens na data da avaliação (Súmula 113); inexigível antes da homologação do cálculo (Súmula 114); não incide sobre honorários do advogado do inventariante (Súmula 115).`
+          },
+          {
+            titulo: `Progressividade: valor sim, parentesco não`,
+            texto: `É válida a progressividade em razão do valor do quinhão, legado ou doação (STF, RE 562.045; hoje expressa no art. 155, § 1º, VI, CF pela EC 132/2023). É INVÁLIDA a progressividade pelo grau de parentesco, proximidade afetiva ou dependência econômica, pois não guarda pertinência com a capacidade contributiva (STF, RE 602.256 AgR).`
+          }
+        ],
+        regrasPraticas: [
+          `Traço comum: ausência de onerosidade (não há contraprestação).`,
+          `Morte presumida: Súmula 331 STF admite incidência do ITCMD no inventário por morte presumida.`,
+          `Adiantamento de legítima é fato gerador do ITCMD-doação, e não do causa mortis.`,
+          `Não incidência e imunidades: meação da viúva meeira (não é herdeira); renúncia pura à herança em favor do monte (art. 6º, II, Lei 8.821/89); doações a projetos socioambientais, instituições federais de ensino e instituições sem fins lucrativos de relevância pública e social (EC 132/2023).`,
+          `Competência territorial: imóveis -> Estado da situação do bem; móveis -> Estado do inventário (causa mortis) ou do domicílio do doador (doação). Elemento no exterior exige Lei Complementar federal (STF, Tema 825, RE 851.108).`,
+          `Decadência em doação não declarada: conta do 1º dia do exercício seguinte àquele em que o lançamento poderia ter sido efetuado, irrelevante quando o Fisco tomou conhecimento (STJ, Tema 1.048).`
+        ]
+      },
+      {
+        id: 'IPVA',
+        sigla: 'IPVA',
+        nome: `Imposto sobre a Propriedade de Veículos Automotores`,
+        esfera: 'Estadual / DF',
+        esferaKey: 'ESTADUAIS',
+        funcao: 'Fiscal / Extrafiscal',
+        cf: `Art. 155, III, da CF/88`,
+        legislacao: `RS: Lei Estadual nº 8.115/85 · Competência plena estadual (art. 24, § 3º, CF)`,
+        fatoGerador: `Propriedade de veículo automotor (bem movido a motor de propulsão que circula por meios próprios). Imposto anual e de natureza real.`,
+        momentoFG: `Anual (1º de janeiro de cada exercício, na forma da legislação estadual).`,
+        baseCalculo: `Valor médio de mercado; para veículo novo, valor do documento fiscal.`,
+        aliquotas: `RS: 3% (automóveis e caminhonetes) e 1% (caminhões, ônibus e veículos de locação). Diferenciação por tipo, valor, utilização e impacto ambiental (EC 132/2023).`,
+        sujeitos: `Ativo: somente o Estado do domicílio tributário ou sede do contribuinte (STF, Tema 708). Passivo: proprietário; adquirente responde por débitos em aberto (art. 131, I, CTN).`,
+        anterioridade: {
+          exercicio: 'Observa',
+          noventena: 'Exceção (Base)',
+          detalhe: `Observa anterioridade de exercício, mas é exceção à noventena quanto à fixação da base de cálculo (art. 150, § 1º, CF).`
+        },
+        reforma: `EC 132/2023 (art. 155, § 6º, III, CF) estendeu o IPVA a veículos aquáticos e aéreos (com exceções expressas) e autorizou seletividade/progressividade por impacto ambiental, tipo, valor e uso.`,
+        pontosChave: [
+          {
+            titulo: `Embarcações e aeronaves: antes vs. depois da EC 132/2023`,
+            texto: `Antes da Reforma Tributária, o STF entendia que o IPVA alcançava apenas veículos terrestres. A EC 132/2023 alterou o art. 155, § 6º, III, da CF para admitir a incidência sobre veículos terrestres, aquáticos e aéreos, COM exceções expressas: aeronaves agrícolas e de serviço a terceiros; embarcações de transporte aquaviário e de pesca; plataformas; tratores e máquinas agrícolas; veículos de passageiros com 20 anos ou mais.`
+          }
+        ],
+        regrasPraticas: [
+          `Na falta de lei complementar de normas gerais (art. 146, III, a, CF), os Estados exercem competência legislativa plena (art. 24, § 3º, CF).`,
+          `Desconto por bom comportamento no trânsito (proprietário sem infrações) é admitido pelo STF pela finalidade extrafiscal.`,
+          `Exceção à noventena na base de cálculo permite atualizar a tabela de valores no fim do ano para valer no fato gerador de 1º de janeiro.`,
+          `Responsabilidade após venda: art. 134 do CTB não alcança IPVA posterior à alienação (Súmula 585 STJ) e responsabilidade solidária do ex-proprietário só existe se prevista em lei estadual específica (STJ, Tema 1.118).`,
+          `Guerra fiscal das locadoras: apenas o Estado onde o contribuinte mantém sede ou domicílio tributário pode cobrar o IPVA (STF, Tema 708, RE 1.016.605).`,
+          `Isenções no RS: máquinas agrícolas, tratores, veículos elétricos, veículos com mais de 20 anos, veículos adaptados para PcD, além de dispensa proporcional em caso de furto ou roubo.`
+        ]
+      },
+      {
+        id: 'ICMS',
+        sigla: 'ICMS',
+        nome: `Imposto sobre Circulação de Mercadorias e Serviços`,
+        esfera: 'Estadual / DF',
+        esferaKey: 'ESTADUAIS',
+        funcao: 'Fiscal',
+        cf: `Art. 155, II, da CF/88`,
+        legislacao: `Normas gerais: LC nº 87/96 (Lei Kandir) e LC nº 204/2023 · RS: Decreto nº 37.699/97`,
+        fatoGerador: `Operações relativas à circulação jurídica (transferência de titularidade) de mercadorias e serviços de transporte interestadual/intermunicipal e de comunicação, ainda que iniciados no exterior.`,
+        momentoFG: `Saída da mercadoria do estabelecimento (art. 12 da LC 87/96) ou desembaraço aduaneiro na importação (Súmula Vinculante 48).`,
+        baseCalculo: `Valor da operação, com cálculo "por dentro". Encargos de cartão de crédito não integram a base (Súmula 237 STJ).`,
+        aliquotas: `Interestaduais: 7%, 12% ou 4% (importados), fixadas pelo Senado. Internas: em regra 17% a 18%. DIFAL ao destino (EC 87/2015).`,
+        sujeitos: `Contribuinte de direito: quem opera com habitualidade ou volume com intuito comercial (art. 4º LC 87/96), ou importador (PF/PJ mesmo não habitual). Consumidor final é contribuinte de fato.`,
+        anterioridade: {
+          exercicio: 'Observa',
+          noventena: 'Observa',
+          detalhe: `Observa anterioridade de exercício e noventena (regra geral constitucional).`
+        },
+        reforma: `LC nº 204/2023 alterou o art. 12 da LC 87/96 para tornar expressa a não incidência na transferência entre estabelecimentos do mesmo titular, preservando o crédito anterior. LC 194/2022 incluiu art. 18-A no CTN (essencialidade).`,
+        pontosChave: [
+          {
+            titulo: `Deslocamento entre estabelecimentos do mesmo titular não gera ICMS`,
+            texto: `O simples deslocamento físico de mercadorias entre estabelecimentos do mesmo titular (inclusive interestadual) não é fato gerador do ICMS, pois não há transferência de titularidade nem ato de mercancia. Fundamentos: Súmula 166 do STJ, Tema 1.099 do STF e alteração do art. 12 da LC 87/96 pela LC nº 204/2023, mantendo-se o crédito das operações anteriores.`
+          }
+        ],
+        regrasPraticas: [
+          `Conceitos-chave: operações = negócios jurídicos; circulação = transferência de titularidade; mercadorias = bens de comércio habitual com fim lucrativo.`,
+          `Não é mercadoria: venda de ativo fixo; salvados de sinistro por seguradoras (SV 32); água canalizada. Exceção: incide na venda, por locadora, de veículo com menos de 12 meses de aquisição (STF, Tema 1.012).`,
+          `Energia e software: energia incide sobre demanda de potência efetivamente utilizada (Súmula 391 STJ). Software por download: STF admitiu incidência (ADI 1.945).`,
+          `Transporte e comunicação: veículo próprio não gera ICMS; transporte municipal paga ISS. Comunicação incide sobre assinatura básica, mas NÃO sobre habilitação de celular (Súmula 350 STJ) nem provedores de internet (Súmula 334 STJ).`,
+          `Não cumulatividade obrigatória (créditos); seletividade facultativa, vinculada à essencialidade se adotada. Combustíveis, energia, comunicações e transporte coletivo são essenciais (art. 18-A CTN, LC 194/2022).`,
+          `ICMS-Importação: incide até sobre PF/PJ não habitual, cobrado no desembaraço aduaneiro (SV 48); não incide em admissão temporária nem trânsito aduaneiro.`,
+          `Conflito ICMS × ISS: se consta da lista da LC 116/2003, incide ISS (concreto em betoneira: Súmula 167 STJ; farmácia de manipulação: Tema 379 STF); fora da lista, ICMS sobre o total (bares e restaurantes: Súmula 163 STJ).`,
+          `DIFAL (EC 87/2015): cabe ao destinatário contribuinte ou, se não contribuinte, ao remetente.`
+        ]
+      },
+      {
+        id: 'II',
+        sigla: 'II',
+        nome: `Imposto sobre a Importação`,
+        esfera: 'Federal',
+        esferaKey: 'FEDERAIS',
+        funcao: 'Extrafiscal',
+        cf: `Art. 153, I, da CF/88`,
+        legislacao: `CTN arts. 19 a 22 · DL nº 37/66 · Decreto nº 6.759/2009 (Regulamento Aduaneiro)`,
+        fatoGerador: `Importação de produtos estrangeiros: entrada no território nacional para incorporação à economia interna.`,
+        momentoFG: `Como regra, data do registro da Declaração de Importação (DI) no Siscomex (art. 23 do DL 37/66), e não a data do desembarque.`,
+        baseCalculo: `Alíquota ad valorem -> valor aduaneiro; alíquota específica -> unidade de medida.`,
+        aliquotas: `Seletivas conforme política de comércio exterior (ex.: bens de capital/médicos reduzidas ou zero; luxo elevadas; regime ex-tarifário). Alteráveis pelo Poder Executivo nos limites da lei (art. 153, § 1º, CF; art. 21, CTN).`,
+        sujeitos: `Ativo: União. Contribuinte: importador — quem promove a entrada da mercadoria estrangeira (art. 22, CTN; art. 31, DL 37/66). Pagamento por débito em conta no registro da DI.`,
+        anterioridade: {
+          exercicio: 'Exceção',
+          noventena: 'Exceção',
+          detalhe: `Exceção tanto à anterioridade de exercício quanto à noventena (art. 150, § 1º, CF).`
+        },
+        reforma: `Sem alteração estrutural direta destacada no resumo pré-prova.`,
+        pontosChave: [
+          {
+            titulo: `Entrada jurídica vs. simples ingresso físico`,
+            texto: `Importação jurídica exige entrada para incorporação à economia nacional. Não incide II na admissão temporária (feiras, carro de turista, obra para museu com retorno à origem) nem no trânsito aduaneiro (passagem pelo país rumo a outro destino).`
+          },
+          {
+            titulo: `Momento do fato gerador e alteração imediata de alíquotas`,
+            texto: `Considera-se ocorrido o fato gerador na data do registro da Declaração de Importação no Siscomex (art. 23, DL 37/66), aplicando-se a legislação desse momento (não do desembarque). O Executivo pode alterar alíquotas nos limites legais (art. 153, § 1º, CF), sem observar anterioridade de exercício nem noventena (art. 150, § 1º, CF).`
+          }
+        ],
+        regrasPraticas: [
+          `Produto estrangeiro: retorno de produto nacional ou nacionalizado não pode ser tributado como II (inconstitucionalidade).`,
+          `Mercadoria destruída sob controle aduaneiro, sem ônus para a Fazenda, não gera o imposto.`,
+          `Mercadoria constante como importada e não localizada no despacho: presume-se a entrada, com multa de 50%. Perdas normais a granel são toleradas até 1%.`,
+          `Regime "ex-tarifário": redução temporária para bens sem similar nacional.`,
+          `Drawback: desonera importações vinculadas à industrialização de produtos destinados à exportação.`,
+          `Isenções de bagagem: objetos de uso pessoal, livros e periódicos, além de bens até US$ 1.000 (via aérea/marítima) ou US$ 500 (via terrestre).`
+        ]
+      },
+      {
+        id: 'IE',
+        sigla: 'IE',
+        nome: `Imposto sobre a Exportação`,
+        esfera: 'Federal',
+        esferaKey: 'FEDERAIS',
+        funcao: 'Extrafiscal',
+        cf: `Art. 153, II, da CF/88`,
+        legislacao: `CTN arts. 23 a 28 · DL nº 1.578/77 · Regulamento Aduaneiro (art. 213)`,
+        fatoGerador: `Exportação, para o exterior, de produtos nacionais ou nacionalizados (saída do território nacional — art. 23, CTN).`,
+        momentoFG: `Data do registro da exportação no Siscomex (art. 1º, § 1º, DL 1.578/77; art. 213 RA).`,
+        baseCalculo: `Alíquota específica (unidade de medida) ou ad valorem (preço normal em venda em livre concorrência no mercado internacional — art. 24, CTN).`,
+        aliquotas: `Alteradas por resolução da Camex, nos limites da lei (art. 153, § 1º, CF; art. 26, CTN; art. 3º, DL 1.578/77), para fins de política cambial e comércio exterior.`,
+        sujeitos: `Ativo: União. Contribuinte: exportador — qualquer pessoa que promova a saída do produto do território nacional (art. 27, CTN; art. 5º, DL 1.578/77).`,
+        anterioridade: {
+          exercicio: 'Exceção',
+          noventena: 'Exceção',
+          detalhe: `Exceção tanto à anterioridade de exercício quanto à noventena (art. 150, § 1º, CF); majoração pode ter efeito imediato.`
+        },
+        reforma: `Sem alteração estrutural direta destacada no resumo pré-prova.`,
+        pontosChave: [
+          {
+            titulo: `Registro da exportação no Siscomex vs. registro da venda (STF × STJ)`,
+            texto: `O fato gerador considera-se ocorrido, para cálculo e cobrança, na data do registro da exportação no Siscomex (art. 1º, § 1º, DL 1.578/77). Para o STF (RE 223.796), o registro da exportação não se confunde com o registro da venda, que é irrelevante. Atenção: há precedentes do STJ atribuindo relevância ao registro de vendas (REsp 964.151).`
+          },
+          {
+            titulo: `Camex e efeito imediato (função extrafiscal)`,
+            texto: `As alíquotas do IE são alteradas por resolução da Camex nos limites legais (art. 153, § 1º, CF; art. 26, CTN), atendendo à política cambial e de comércio exterior. É exceção à anterioridade de exercício e à noventena (art. 150, § 1º, CF).`
+          }
+        ],
+        regrasPraticas: [
+          `Produtos nacionais: produzidos no país. Nacionalizados: produzidos fora, mas importados para uso industrial, comercial ou consumo.`,
+          `Não incide na saída de produto estrangeiro que entrou apenas em admissão temporária.`,
+          `Aspecto espacial: território nacional geográfico, excluídas representações diplomáticas, aeronaves e embarcações brasileiras no exterior.`
+        ]
+      },
+      {
+        id: 'IR',
+        sigla: 'IR (IRPF / IRPJ)',
+        nome: `Imposto sobre a Renda e Proventos de Qualquer Natureza`,
+        esfera: 'Federal',
+        esferaKey: 'FEDERAIS',
+        funcao: 'Fiscal',
+        cf: `Art. 153, III e § 2º, I, da CF/88`,
+        legislacao: `CTN arts. 43 a 45 · IRPF: Leis 7.713/88 e 9.250/95 · IRPJ: Leis 8.981/95 e 9.430/96 · RIR/2018 (Dec. 9.580/2018)`,
+        fatoGerador: `Aquisição da disponibilidade econômica (efetivo recebimento) ou jurídica (título sem condição suspensiva) de acréscimo patrimonial — renda ou proventos (art. 43, CTN).`,
+        momentoFG: `IRPF: 31 de dezembro (ajuste anual), com retenção na fonte ou carnê-leão mensal. IRPJ: trimestral ou anual (com estimativas mensais no lucro real).`,
+        baseCalculo: `Montante real, presumido ou arbitrado da renda ou dos proventos tributáveis (art. 44, CTN).`,
+        aliquotas: `IRPF progressivo (isenção mensal atual até R$ 5.000,00); ganho de capital: 15%; aplicações financeiras: regressivas de 22,5% a 15%. IRPJ: 15% + adicional de 10% sobre o lucro excedente a R$ 20.000,00/mês.`,
+        sujeitos: `Contribuinte: titular da disponibilidade (art. 45, CTN). Fonte pagadora pode ser responsável pela retenção (art. 45, p.u., CTN), mas falta de retenção não exclui dever do contribuinte no ajuste.`,
+        anterioridade: {
+          exercicio: 'Observa',
+          noventena: 'Não citada como exceção no resumo / Quadro: Anterioridade de exercício',
+          detalhe: `Observa a anterioridade de exercício. A correção da tabela depende de lei (ausência não configura confisco, segundo o STF).`
+        },
+        reforma: `Sem alteração pela EC 132/2023 tratada no resumo; destaque para faixa de isenção mensal atual de até R$ 5.000,00.`,
+        pontosChave: [
+          {
+            titulo: `Indenizações não são renda (STF RE 188.684; Súmula 498 STJ; Tema 808 STF)`,
+            texto: `O núcleo do art. 43 do CTN é o acréscimo patrimonial: não se tributa capital, faturamento, descontos ou recomposição patrimonial. Não incide IR sobre indenização por danos morais (Súmula 498 STJ) nem sobre juros de mora pelo atraso no pagamento de remuneração, pois reparam danos emergentes (STF, Tema 808).`
+          },
+          {
+            titulo: `Terço de férias: indenizadas vs. gozadas e restituição`,
+            texto: `Férias vencidas e não gozadas e férias proporcionais pagas na rescisão (com o 1/3) têm natureza indenizatória e NÃO sofrem IR (Súmulas 125 e 386 STJ). Já o terço das férias efetivamente gozadas tem natureza remuneratória e SOFRE IR (STJ, Tema 881). Imposto pago indevidamente é recuperado por retificação e pedido de restituição (art. 165, I, CTN) em 5 anos do pagamento (art. 168, I, CTN c/c art. 3º, LC 118/2005).`
+          }
+        ],
+        regrasPraticas: [
+          `Princípios constitucionais (art. 153, § 2º, I, CF): generalidade (todos contribuintes), universalidade (todas rendas) e progressividade (alíquota maior para base maior). Na prática há segmentação (dividendos isentos, fonte, ganho de capital a 15%).`,
+          `Verbas isentas/indenizatórias: licença-prêmio não gozada, auxílio-creche, ajuda de custo para uso de veículo próprio; complementação/resgate de previdência privada relativo a contribuições de 1989 a 1995 (STJ, repetitivo).`,
+          `Stock options: não incide IR na aquisição das ações, apenas no ganho de capital na revenda (STJ, Tema 1.226).`,
+          `IRPF ajuste e deduções: Declaração de Ajuste Anual até 30 de abril; declaração conjunta não gera solidariedade entre cônjuges. Despesas médicas são dedutíveis sem limite (Súmula CARF 180); educação tem limite legal.`,
+          `Ganho de capital e aplicações: venda de imóvel tributada a 15%, com isenção para imóvel até R$ 35.000,00 e para venda de imóvel residencial aplicada em outro imóvel residencial em até 180 dias (Lei 11.196/2005). Aplicações financeiras: IR incide sobre a correção monetária (STJ, Tema 1.160).`,
+          `IRPJ (ECF): Lucro real (ajustado por adições, exclusões e compensações; trava de 30% para compensar prejuízos — constitucional, STF Tema 591); Lucro presumido (receita até R$ 78 milhões; presunção de 8% regra ou 32% serviços); Lucro arbitrado (excepcional).`
+        ]
+      }
+    ];
+
+    const JURISPRUDENCIA = [
+      { id: 'j1', tax: 'ITCMD', tribunal: 'STF', ref: `Súmula 331 do STF`, tese: `Admite a incidência do ITCMD no inventário por morte presumida.`, nota: `Aplicável à sucessão provisória por falecimento presumido.` },
+      { id: 'j2', tax: 'ITCMD', tribunal: 'STF', ref: `Súmula 112 do STF`, tese: `O imposto de transmissão causa mortis é devido pela alíquota vigente ao tempo da abertura da sucessão (data do óbito).`, nota: `Consequência direta do princípio da saisine (art. 1.784 CC); irrelevante a data de abertura ou conclusão do inventário.` },
+      { id: 'j3', tax: 'ITCMD', tribunal: 'STJ', ref: `REsp 1.142.872 (STJ)`, tese: `Confirma a aplicação da alíquota vigente na data do óbito (abertura da sucessão), e não na do inventário.`, nota: `Reforço jurisprudencial da Súmula 112 do STF.` },
+      { id: 'j4', tax: 'ITCMD', tribunal: 'STF', ref: `Súmula 113 do STF`, tese: `O imposto de transmissão causa mortis é calculado sobre o valor dos bens na data da avaliação.`, nota: `Atenção para não confundir: alíquota = data do óbito (Súmula 112); valor dos bens = data da avaliação (Súmula 113).` },
+      { id: 'j5', tax: 'ITCMD', tribunal: 'STF', ref: `Súmula 114 do STF`, tese: `O imposto de transmissão causa mortis não é exigível antes da homologação do cálculo.`, nota: `Marco temporal da exigibilidade processual no inventário.` },
+      { id: 'j6', tax: 'ITCMD', tribunal: 'STF', ref: `Súmula 115 do STF`, tese: `Sobre os honorários do advogado contratado pelo inventariante, com a homologação do juiz, não incide o ITCMD.`, nota: `Exclusão da base tributável.` },
+      { id: 'j7', tax: 'ITCMD', tribunal: 'STF', ref: `RE 562.045 (STF)`, tese: `É válida a progressividade do ITCMD em razão do valor do quinhão, legado ou doação.`, nota: `Hoje expressa no art. 155, § 1º, VI, da CF/88 (incluído pela EC 132/2023).` },
+      { id: 'j8', tax: 'ITCMD', tribunal: 'STF', ref: `RE 602.256 AgR (STF)`, tese: `É inválida a progressividade do ITCMD pelo grau de parentesco, proximidade afetiva ou dependência econômica.`, nota: `Critérios não guardam pertinência com a capacidade contributiva.` },
+      { id: 'j9', tax: 'ITCMD', tribunal: 'STF', ref: `Tema 825 / RE 851.108 (STF)`, tese: `Nos casos de ITCMD com elemento no exterior (doador ou falecido residente fora, ou bens no exterior), o STF exige prévia lei complementar federal.`, nota: `Estados não podem suprir a omissão apenas por lei estadual.` },
+      { id: 'j10', tax: 'ITCMD', tribunal: 'STJ', ref: `Tema 1.048 (STJ)`, tese: `Na doação não declarada, o prazo decadencial conta do 1º dia do exercício seguinte àquele em que o lançamento poderia ter sido efetuado.`, nota: `É irrelevante a data em que o Fisco tomou conhecimento da doação.` },
+      { id: 'j11', tax: 'IPVA', tribunal: 'STF', ref: `Tema 708 / RE 1.016.605 (STF)`, tese: `Somente o Estado em que o contribuinte mantém sua sede ou domicílio tributário pode cobrar o IPVA.`, nota: `Combate à "guerra fiscal" promovida por locadoras que registravam frotas em Estados com alíquota menor.` },
+      { id: 'j12', tax: 'IPVA', tribunal: 'STJ', ref: `Súmula 585 do STJ`, tese: `A responsabilidade solidária do ex-proprietário prevista no art. 134 do CTB não abrange o IPVA posterior à alienação do veículo.`, nota: `Limite à responsabilização de quem vendeu o automóvel.` },
+      { id: 'j13', tax: 'IPVA', tribunal: 'STJ', ref: `Tema 1.118 (STJ)`, tese: `A responsabilidade solidária do ex-proprietário pelo IPVA só pode ser atribuída por lei estadual específica.`, nota: `Não decorre automaticamente do art. 134 do Código de Trânsito Brasileiro.` },
+      { id: 'j14', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 166 do STJ`, tese: `Não constitui fato gerador do ICMS o simples deslocamento de mercadoria de um para outro estabelecimento do mesmo contribuinte.`, nota: `Ausência de transferência de titularidade e de ato de mercancia.` },
+      { id: 'j15', tax: 'ICMS', tribunal: 'STF', ref: `Tema 1.099 (STF)`, tese: `Não incide ICMS no deslocamento de bens entre estabelecimentos do mesmo titular, ainda que em operações interestaduais.`, nota: `Reforçado pela LC nº 204/2023 (alterou art. 12 da LC 87/96), mantendo-se o crédito anterior.` },
+      { id: 'j16', tax: 'ICMS', tribunal: 'STF', ref: `Súmula Vinculante 32 (STF)`, tese: `O ICMS não incide sobre alienação de salvados de sinistro pelas seguradoras.`, nota: `Salvados não configuram mercadoria com intuito comercial habitual.` },
+      { id: 'j17', tax: 'ICMS', tribunal: 'STF', ref: `Tema 1.012 (STF)`, tese: `Incide ICMS na venda, por locadora, de veículo com menos de 12 meses de aquisição.`, nota: `Diferencia-se da venda comum de ativo fixo após uso prolongado.` },
+      { id: 'j18', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 391 do STJ`, tese: `O ICMS incide sobre o valor da tarifa de energia elétrica correspondente à demanda de potência efetivamente utilizada.`, nota: `Não incide sobre a potência contratada e não utilizada.` },
+      { id: 'j19', tax: 'ICMS', tribunal: 'STF', ref: `ADI 1.945 (STF)`, tese: `Admitida a incidência de ICMS sobre operações com software adquirido por download.`, nota: `Circulação de mercadoria digital tratada no resumo.` },
+      { id: 'j20', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 350 do STJ`, tese: `O ICMS não incide sobre o serviço de habilitação de telefone celular.`, nota: `Serviço meramente preparatório; assinatura básica de telefonia incide.` },
+      { id: 'j21', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 334 do STJ`, tese: `O ICMS não incide no serviço dos provedores de acesso à Internet.`, nota: `Não se confunde com o serviço de comunicação propriamente dito.` },
+      { id: 'j22', tax: 'ICMS', tribunal: 'STF', ref: `Súmula Vinculante 48 (STF)`, tese: `Na entrada de mercadoria importada do exterior, é legítima a cobrança do ICMS por ocasião do desembaraço aduaneiro.`, nota: `Incide mesmo se o importador for pessoa física ou jurídica não contribuinte habitual.` },
+      { id: 'j23', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 163 do STJ`, tese: `O fornecimento de mercadorias com simultânea prestação de serviços em bares e restaurantes sujeita-se ao ICMS sobre o valor total.`, nota: `Não está na lista de serviços da LC 116/2003.` },
+      { id: 'j24', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 167 do STJ`, tese: `O fornecimento de concreto preparado no trajeto até a obra em betoneiras acopladas a caminhões sujeita-se apenas ao ISS.`, nota: `Serviço previsto na lista da LC 116/2003.` },
+      { id: 'j25', tax: 'ICMS', tribunal: 'STF', ref: `Tema 379 (STF)`, tese: `Incide ISS (e não ICMS) sobre a preparação e fornecimento de medicamentos manipulados por farmácias de manipulação.`, nota: `Serviço enquadrado na lista da LC 116/2003.` },
+      { id: 'j26', tax: 'ICMS', tribunal: 'STJ', ref: `Súmula 237 do STJ`, tese: `Nas operações com cartão de crédito, os encargos relativos ao financiamento não integram a base de cálculo do ICMS.`, nota: `Compõe a base apenas o valor da operação mercantil.` },
+      { id: 'j27', tax: 'IE', tribunal: 'STF', ref: `RE 223.796 (STF) × REsp 964.151 (STJ)`, tese: `STF: fato gerador do IE ocorre no registro da exportação no Siscomex, sendo irrelevante o registro da venda. STJ possui precedente (REsp 964.151) atribuindo relevância ao registro de vendas.`, nota: `Divergência expressamente sinalizada como ponto-chave de prova.` },
+      { id: 'j28', tax: 'IR', tribunal: 'STF', ref: `RE 188.684 (STF)`, tese: `Indenizações não constituem renda, pois apenas recompõem o patrimônio desfalcado.`, nota: `Ausência de acréscimo patrimonial (art. 43, CTN).` },
+      { id: 'j29', tax: 'IR', tribunal: 'STJ', ref: `Súmula 498 do STJ`, tese: `Não incide Imposto de Renda sobre a indenização por danos morais.`, nota: `Verba de caráter estritamente indenizatório.` },
+      { id: 'j30', tax: 'IR', tribunal: 'STF', ref: `Tema 808 (STF)`, tese: `Não incide IR sobre os juros de mora devidos pelo atraso no pagamento de remuneração, por repararem danos emergentes.`, nota: `Recomposição de perda pelo atraso, não acréscimo de renda.` },
+      { id: 'j31', tax: 'IR', tribunal: 'STJ', ref: `Súmulas 125 e 386 do STJ`, tese: `Não incide IR sobre férias vencidas e não gozadas nem sobre férias proporcionais pagas na rescisão (com o respectivo 1/3).`, nota: `Natureza indenizatória.` },
+      { id: 'j32', tax: 'IR', tribunal: 'STJ', ref: `Tema 881 (STJ)`, tese: `Incide Imposto de Renda sobre o adicional de 1/3 constitucional das férias efetivamente gozadas.`, nota: `Natureza remuneratória (contraste direto com Súmulas 125 e 386).` },
+      { id: 'j33', tax: 'IR', tribunal: 'STJ', ref: `Tema 1.226 (STJ)`, tese: `Não incide IR na aquisição de ações via stock options; a tributação ocorre apenas no ganho de capital na revenda.`, nota: `Inexistência de disponibilidade de renda no exercício da opção de compra.` },
+      { id: 'j34', tax: 'IR', tribunal: 'CARF', ref: `Súmula CARF 180`, tese: `As despesas médicas são dedutíveis sem limite na Declaração de Ajuste Anual do IRPF.`, nota: `Diferente das despesas com educação, que possuem limite legal.` },
+      { id: 'j35', tax: 'IR', tribunal: 'STJ', ref: `Tema 1.160 (STJ)`, tese: `Incide Imposto de Renda sobre a correção monetária das aplicações financeiras.`, nota: `Aplicações têm alíquotas regressivas de 22,5% a 15%.` },
+      { id: 'j36', tax: 'IR', tribunal: 'STF', ref: `Tema 591 (STF)`, tese: `É constitucional a trava de 30% para compensação de prejuízos fiscais na apuração do IRPJ pelo lucro real.`, nota: `Ajuste no lucro líquido por adições, exclusões e compensações.` }
+    ];
+
+    const FLASHCARDS = [
+      {
+        id: 'fc1',
+        tax: 'ITCMD',
+        pegadinha: `No inventário concluído 4 anos após o falecimento, aplica-se a alíquota do ITCMD vigente na data da sentença de partilha e sobre o valor da data do óbito?`,
+        regra: `Inverso! A alíquota é a da data do óbito (abertura da sucessão — Súmula 112 STF e REsp 1.142.872 STJ, pela saisine), mas a base de cálculo considera o valor dos bens na data da avaliação (Súmula 113 STF). Não se exige antes da homologação do cálculo (Súmula 114 STF).`,
+        cite: `Súmulas 112, 113 e 114 do STF · Art. 1.784 do CC`
+      },
+      {
+        id: 'fc2',
+        tax: 'ITCMD',
+        pegadinha: `Pode lei estadual fixar alíquota maior de ITCMD para herdeiro sem vínculo de parentesco próximo ou em razão da dependência econômica?`,
+        regra: `Não. A progressividade é válida apenas em razão do valor do quinhão, legado ou doação (STF RE 562.045; art. 155, § 1º, VI, CF pela EC 132/2023). Progressividade por grau de parentesco, proximidade afetiva ou dependência econômica é inconstitucional (STF, RE 602.256 AgR).`,
+        cite: `RE 562.045 · RE 602.256 AgR · EC 132/2023`
+      },
+      {
+        id: 'fc3',
+        tax: 'ITCMD',
+        pegadinha: `A meação da viúva meeira e o adiantamento de legítima sofrem incidência de ITCMD causa mortis?`,
+        regra: `Nenhum dos dois sofre ITCMD causa mortis! A meação da viúva não sofre ITCMD porque ela não é herdeira (já era titular da metade). O adiantamento de legítima é fato gerador de ITCMD-doação (inter vivos), e não causa mortis. Tampouco incide sobre renúncia pura ao monte.`,
+        cite: `Art. 6º, II, Lei RS 8.821/89 · Art. 538 do CC`
+      },
+      {
+        id: 'fc4',
+        tax: 'IPVA',
+        pegadinha: `Após a EC 132/2023, todas as embarcações e aeronaves passaram a pagar IPVA sem exceções?`,
+        regra: `Não! Embora a EC 132/2023 tenha superado a jurisprudência antiga do STF (que restringia o IPVA a veículos terrestres), o art. 155, § 6º, III, da CF traz exceções expressas: aeronaves agrícolas e de serviço a terceiros; embarcações de transporte aquaviário e de pesca; plataformas; tratores/máquinas agrícolas; veículos de passageiros com 20 anos ou mais.`,
+        cite: `Art. 155, § 6º, III, CF/88 (EC 132/2023)`
+      },
+      {
+        id: 'fc5',
+        tax: 'IPVA',
+        pegadinha: `Locadora registra toda a frota em Estado com IPVA de 1%, mas aluga os carros em outro Estado. Quem cobra o IPVA? E se o ex-proprietário não comunicou a venda no Detran?`,
+        regra: `Somente o Estado da sede ou domicílio tributário do contribuinte pode cobrar o IPVA (STF, Tema 708). Quanto ao ex-proprietário, o art. 134 do CTB não o torna solidário por IPVA posterior à venda (Súmula 585 STJ); tal solidariedade exige lei estadual específica (STJ, Tema 1.118).`,
+        cite: `Tema 708 STF · Súmula 585 e Tema 1.118 STJ`
+      },
+      {
+        id: 'fc6',
+        tax: 'ICMS',
+        pegadinha: `A transferência de estoque da matriz no RS para a filial em SC gera obrigação de recolher ICMS interestadual?`,
+        regra: `Não! O simples deslocamento de mercadorias entre estabelecimentos do mesmo titular (mesmo interestadual) não configura circulação jurídica nem ato de mercancia. Não há fato gerador de ICMS, mantendo-se o crédito das operações anteriores.`,
+        cite: `Súmula 166 STJ · Tema 1.099 STF · LC nº 204/2023`
+      },
+      {
+        id: 'fc7',
+        tax: 'ICMS',
+        pegadinha: `Bares/restaurantes, concreto em betoneira e farmácia de manipulação pagam ICMS ou ISS?`,
+        regra: `Regra prática pela lista da LC 116/2003: se está na lista, paga ISS (concreto preparado no trajeto em betoneira = ISS pela Súmula 167 STJ; farmácia de manipulação = ISS pelo Tema 379 STF). Se não está, paga ICMS sobre o valor total (bares e restaurantes = ICMS pela Súmula 163 STJ).`,
+        cite: `Súmulas 163 e 167 STJ · Tema 379 STF`
+      },
+      {
+        id: 'fc8',
+        tax: 'II',
+        pegadinha: `Bens estrangeiros entram no Brasil para exposição em feira internacional e retornam depois. Qual a data do fato gerador do II?`,
+        regra: `Não há fato gerador do II! A entrada jurídica exige incorporação à economia nacional: admissão temporária e trânsito aduaneiro não sofrem II. Quando há importação definitiva, o FG ocorre na data do registro da Declaração de Importação no Siscomex (não no desembarque), e o Executivo pode alterar alíquotas sem anterioridade nem noventena.`,
+        cite: `Art. 23 DL 37/66 · Art. 150, § 1º e art. 153, § 1º CF`
+      },
+      {
+        id: 'fc9',
+        tax: 'IE',
+        pegadinha: `No Imposto de Exportação, quem altera as alíquotas, quando incide a majoração e qual registro define o fato gerador?`,
+        regra: `Alteração por resolução da Camex (função extrafiscal/cambial), com efeito imediato (exceção à anterioridade e à noventena). O FG ocorre no registro da exportação no Siscomex (STF, RE 223.796 — irrelevante o registro da venda, embora haja divergência no STJ, REsp 964.151).`,
+        cite: `DL 1.578/77 · RE 223.796 STF · REsp 964.151 STJ`
+      },
+      {
+        id: 'fc10',
+        tax: 'IR',
+        pegadinha: `O adicional de 1/3 de férias e os juros de mora sobre salários em atraso sofrem retenção de Imposto de Renda?`,
+        regra: `Depende! O 1/3 de férias efetivamente gozadas tem caráter remuneratório e SOFRE IR (Tema 881 STJ). Já o 1/3 de férias vencidas/não gozadas ou proporcionais na rescisão é indenizatório e NÃO sofre IR (Súmulas 125 e 386 STJ). Juros de mora por atraso remuneratório (Tema 808 STF) e dano moral (Súmula 498 STJ) também NÃO sofrem IR.`,
+        cite: `Tema 881 e Súmulas 125, 386, 498 STJ · Tema 808 STF`
+      },
+      {
+        id: 'fc11',
+        tax: 'IR',
+        pegadinha: `Empregado que adquire ações via stock options já paga IR no momento da compra? E a venda de imóvel residencial paga sempre 15%?`,
+        regra: `Na aquisição de stock options não incide IR, apenas no ganho de capital na revenda (STJ, Tema 1.226). Na venda de imóvel, a alíquota é de 15%, mas há isenção para imóvel até R$ 35.000,00 e para venda de imóvel residencial cujo produto seja aplicado em outro imóvel residencial em até 180 dias (Lei 11.196/2005).`,
+        cite: `Tema 1.226 STJ · Lei nº 11.196/2005`
+      },
+      {
+        id: 'fc12',
+        tax: 'IR',
+        pegadinha: `No IRPJ pelo Lucro Real, a empresa pode compensar 100% do prejuízo fiscal acumulado num único trimestre lucrativo?`,
+        regra: `Não! A compensação de prejuízos fiscais no lucro real é limitada à trava de 30% do lucro líquido ajustado — limitação declarada constitucional pelo STF (Tema 591). Alíquota básica de 15% + adicional de 10% sobre o que exceder R$ 20.000,00/mês.`,
+        cite: `Tema 591 STF · Leis 8.981/95 e 9.430/96`
+      }
+    ];
+
+    const QUIZ_QUESTIONS = [
+      {
+        id: 'q1',
+        tax: 'ITCMD',
+        enunciado: `João faleceu em 2021, quando a alíquota estadual do ITCMD era de 4%. O inventário só foi aberto em 2024 e a avaliação judicial dos bens ocorreu em 2025, já sob nova lei que elevou a alíquota para 6%. Qual regime se aplica?`,
+        opcoes: [
+          `Alíquota de 6% (data da abertura do inventário) e valor dos bens na data do óbito.`,
+          `Alíquota de 4% (data do óbito, pelo princípio da saisine) e valor dos bens na data da avaliação (Súmulas 112 e 113 do STF).`,
+          `Alíquota de 6% e valor da avaliação de 2025, pois o crédito só nasce com a sentença de partilha.`,
+          `Alíquota de 4%, exigível imediatamente antes mesmo da homologação do cálculo pelo juiz.`
+        ],
+        correta: 1,
+        explicacao: `Correto! Pela Súmula 112 do STF (e REsp 1.142.872 do STJ), aplica-se a alíquota vigente na data do óbito (abertura da sucessão). Já o valor dos bens é o da data da avaliação (Súmula 113 STF), e o imposto não é exigível antes da homologação do cálculo (Súmula 114 STF).`
+      },
+      {
+        id: 'q2',
+        tax: 'ITCMD',
+        enunciado: `Sobre a progressividade e as hipóteses de não incidência do ITCMD à luz da jurisprudência do STF e da EC 132/2023, assinale a alternativa correta:`,
+        opcoes: [
+          `É válida a progressividade de alíquotas conforme o grau de parentesco entre falecido e herdeiro.`,
+          `A meação da viúva meeira e o adiantamento de legítima submetem-se ambos ao ITCMD causa mortis.`,
+          `É válida a progressividade em razão do valor do quinhão, legado ou doação (RE 562.045 e EC 132/2023), mas inválida pelo grau de parentesco (RE 602.256 AgR).`,
+          `Na doação não declarada, o prazo decadencial só começa a correr quando o Fisco toma ciência do ato.`
+        ],
+        correta: 2,
+        explicacao: `Correto! A progressividade pelo valor é válida (RE 562.045; art. 155, § 1º, VI, CF pela EC 132/2023), mas é inválida pelo grau de parentesco ou proximidade afetiva (RE 602.256 AgR). Além disso, a meação não sofre ITCMD, o adiantamento de legítima gera ITCMD-doação e, na doação não declarada, a ciência do Fisco é irrelevante para a decadência (Tema 1.048 STJ).`
+      },
+      {
+        id: 'q3',
+        tax: 'IPVA',
+        enunciado: `Com a EC 132/2023 (Reforma Tributária), o art. 155, § 6º, III, da CF passou a prever a incidência do IPVA sobre veículos terrestres, aquáticos e aéreos. Contudo, a própria Constituição excluiu expressamente da incidência:`,
+        opcoes: [
+          `Apenas automóveis elétricos e veículos pertencentes a locadoras com sede em outro Estado.`,
+          `Aeronaves agrícolas e de serviço a terceiros, embarcações de transporte aquaviário e de pesca, plataformas, tratores/máquinas agrícolas e veículos de passageiros com 20 anos ou mais.`,
+          `Todas as aeronaves comerciais e todas as embarcações de recreio ou esporte.`,
+          `Apenas veículos de transporte coletivo municipal e ambulâncias.`
+        ],
+        correta: 1,
+        explicacao: `Correto! O art. 155, § 6º, III, da CF (EC 132/2023) excepcionou expressamente: aeronaves agrícolas e de serviço a terceiros, embarcações de transporte aquaviário e de pesca, plataformas, tratores e máquinas agrícolas, e veículos de passageiros com 20 anos ou mais.`
+      },
+      {
+        id: 'q4',
+        tax: 'IPVA',
+        enunciado: `Em matéria de IPVA, quanto à anterioridade, sujeito ativo e responsabilidade pela alienação do veículo, assinale a opção correta:`,
+        opcoes: [
+          `A atualização anual da tabela de valor venal do IPVA no fim do ano exige respeito à noventena para valer em 1º de janeiro.`,
+          `A locadora de veículos deve recolher o IPVA ao Estado onde escolheu registrar administrativamente a placa, ainda que sua sede seja em outro Estado.`,
+          `O IPVA é exceção à noventena quanto à fixação da base de cálculo (art. 150, § 1º, CF); o sujeito ativo é o Estado da sede/domicílio do contribuinte (Tema 708 STF); e a Súmula 585 do STJ afasta o art. 134 do CTB para IPVA posterior à alienação.`,
+          `Na ausência de lei complementar nacional, os Estados ficam impedidos de instituir ou cobrar IPVA.`
+        ],
+        correta: 2,
+        explicacao: `Correto! Art. 150, § 1º, CF excepciona a base de cálculo do IPVA da noventena (observando a anterioridade de exercício); o Tema 708 do STF fixa o sujeito ativo no domicílio/sede do contribuinte; e a Súmula 585 + Tema 1.118 do STJ exigem lei estadual específica, afastando a extensão automática do art. 134 do CTB.`
+      },
+      {
+        id: 'q5',
+        tax: 'ICMS',
+        enunciado: `Uma rede varejista transfere mercadorias de seu centro de distribuição no Rio Grande do Sul para sua própria filial em Santa Catarina. À luz da Súmula 166 do STJ, do Tema 1.099 do STF e da LC nº 204/2023:`,
+        opcoes: [
+          `Incide ICMS pela alíquota interestadual de 12%, pois houve saída física interestadual da mercadoria.`,
+          `Não ocorre fato gerador do ICMS por ausência de transferência de titularidade, mantendo-se o crédito das operações anteriores.`,
+          `Não incide ICMS apenas se a transferência ocorrer dentro do mesmo Estado; sendo interestadual, há incidência.`,
+          `Incide ICMS, mas o contribuinte pode substituí-lo pelo recolhimento do ISS no destino.`
+        ],
+        correta: 1,
+        explicacao: `Correto! O simples deslocamento entre estabelecimentos do mesmo titular (inclusive interestadual) não é fato gerador de ICMS (Súmula 166 STJ, Tema 1.099 STF e nova redação do art. 12 da LC 87/96 dada pela LC 204/2023), preservando-se o crédito das etapas anteriores.`
+      },
+      {
+        id: 'q6',
+        tax: 'ICMS',
+        enunciado: `Assinale a correspondência correta entre a atividade econômica e o tributo incidente segundo a jurisprudência consolidada:`,
+        opcoes: [
+          `Bares e restaurantes: ISS (Súmula 163 STJ); concreto preparado em betoneira no trajeto: ICMS (Súmula 167 STJ).`,
+          `Habilitação de celular e provedores de internet: ICMS sobre ambos (Súmulas 350 e 334 STJ).`,
+          `Salvados de sinistro vendidos por seguradora: não incide ICMS (SV 32); venda por locadora de veículo com menos de 12 meses de aquisição: incide ICMS (Tema 1.012 STF).`,
+          `Encargos de financiamento de cartão de crédito: integram a base de cálculo do ICMS (Súmula 237 STJ).`
+        ],
+        correta: 2,
+        explicacao: `Correto! Salvados de sinistro não pagam ICMS (SV 32), enquanto a venda de veículo por locadora antes de 12 meses de aquisição sofre ICMS (Tema 1.012 STF). Bares/restaurantes pagam ICMS (Súmula 163 STJ); concreto em betoneira paga ISS (Súmula 167 STJ); habilitação, internet e encargos de cartão não sofrem ICMS (Súmulas 350, 334 e 237 STJ).`
+      },
+      {
+        id: 'q7',
+        tax: 'II',
+        enunciado: `Um navio atraca no porto em 10 de maio trazendo equipamentos médicos estrangeiros, mas o registro da Declaração de Importação (DI) no Siscomex só ocorre em 25 de maio, após decreto federal publicado em 20 de maio que reduziu a alíquota do II de 10% para 2%. Qual alíquota se aplica?`,
+        opcoes: [
+          `10%, pois vigora a legislação da data do desembarque físico no porto (10 de maio).`,
+          `2%, pois o fato gerador do II considera-se ocorrido na data do registro da DI no Siscomex (25 de maio), e o II é exceção à anterioridade e à noventena.`,
+          `10%, porque a alteração de alíquota por decreto do Executivo exige observância da noventena.`,
+          `Nenhuma, pois equipamentos médicos gozam sempre de imunidade constitucional absoluta.`
+        ],
+        correta: 1,
+        explicacao: `Correto! Pelo art. 23 do DL 37/66, o fato gerador do II ocorre, em regra, na data do registro da Declaração de Importação no Siscomex. Ademais, o Executivo pode alterar suas alíquotas nos limites da lei (art. 153, § 1º, CF) com eficácia imediata, por ser exceção à anterioridade de exercício e à noventena (art. 150, § 1º, CF).`
+      },
+      {
+        id: 'q8',
+        tax: 'II',
+        enunciado: `Em qual das situações abaixo há incidência normal do Imposto sobre a Importação (II)?`,
+        opcoes: [
+          `Obra de arte estrangeira trazida para exposição temporária em museu brasileiro com posterior retorno ao país de origem.`,
+          `Mercadoria estrangeira em trânsito aduaneiro pelo território brasileiro com destino final ao Uruguai.`,
+          `Retorno ao Brasil de produto nacional anteriormente exportado ou de bem destruído sob controle aduaneiro sem ônus para a Fazenda.`,
+          `Entrada de bem estrangeiro incorporado à economia nacional mediante despacho definitivo de importação, fora das hipóteses de isenção de bagagem ou drawback.`
+        ],
+        correta: 3,
+        explicacao: `Correto! A importação em sentido jurídico exige incorporação à economia nacional. Admissão temporária, trânsito aduaneiro, retorno de produto nacional/nacionalizado e mercadoria destruída sob controle aduaneiro sem ônus para a Fazenda não geram II.`
+      },
+      {
+        id: 'q9',
+        tax: 'IE',
+        enunciado: `Quanto ao Imposto sobre a Exportação (IE), considere as afirmativas sobre competência para alteração de alíquota e momento do fato gerador:`,
+        opcoes: [
+          `Suas alíquotas só podem ser alteradas por lei ordinária do Congresso, com respeito à noventena.`,
+          `As alíquotas podem ser alteradas por resolução da Camex nos limites da lei, com efeito imediato (exceção à anterioridade e noventena), e o STF (RE 223.796) fixa o fato gerador no registro da exportação no Siscomex.`,
+          `Incide normalmente na saída de produto estrangeiro que ingressou no Brasil apenas em admissão temporária.`,
+          `Sua base de cálculo ad valorem é sempre o valor da nota fiscal interna emitida há 1 ano, vedada referência ao mercado internacional.`
+        ],
+        correta: 1,
+        explicacao: `Correto! Pelo art. 153, § 1º, CF, art. 26 CTN e art. 3º DL 1.578/77, a Camex altera as alíquotas do IE sem anterioridade nem noventena (art. 150, § 1º, CF). O STF (RE 223.796) entende que o FG ocorre no registro da exportação no Siscomex (irrelevante o registro da venda — embora haja precedente divergente no STJ, REsp 964.151).`
+      },
+      {
+        id: 'q10',
+        tax: 'IE',
+        enunciado: `Qual é o aspecto material e espacial correto do Imposto sobre a Exportação (IE)?`,
+        opcoes: [
+          `Incide sobre produtos nacionais ou nacionalizados na saída do território nacional geográfico (excluídas representações diplomáticas, aeronaves e embarcações brasileiras no exterior).`,
+          `Incide apenas sobre produtos industrializados no Brasil, nunca sobre produtos nacionalizados.`,
+          `Alcança qualquer venda entre empresas sediadas no Brasil mesmo sem saída física do produto do território nacional.`,
+          `Incide exclusivamente quando o produto atravessa embaixadas brasileiras situadas em outros países.`
+        ],
+        correta: 0,
+        explicacao: `Correto! O IE incide sobre a saída do território nacional geográfico de produtos nacionais (produzidos no país) ou nacionalizados (importados para uso industrial, comercial ou consumo). Não alcança embaixadas, aeronaves ou embarcações brasileiras no exterior.`
+      },
+      {
+        id: 'q11',
+        tax: 'IR',
+        enunciado: `Ao analisar verbas trabalhistas e indenizatórias frente ao Imposto de Renda, a jurisprudência consolidada do STF e do STJ estabelece que:`,
+        opcoes: [
+          `Incide IR sobre indenização por danos morais e sobre juros de mora pelo atraso no pagamento de salário.`,
+          `Incide IR sobre o 1/3 de férias efetivamente gozadas (Tema 881 STJ), mas NÃO incide sobre férias não gozadas/proporcionais na rescisão com seu 1/3 (Súmulas 125 e 386 STJ), danos morais (Súmula 498 STJ) ou juros de mora remuneratórios (Tema 808 STF).`,
+          `Não incide IR sobre o 1/3 de férias em nenhuma hipótese, nem mesmo quando efetivamente gozadas.`,
+          `O IR pago indevidamente não pode ser restituído, devendo o contribuinte aguardar prescrição de 10 anos.`
+        ],
+        correta: 1,
+        explicacao: `Correto! Férias efetivamente gozadas (+ 1/3) têm natureza remuneratória e sofrem IR (Tema 881 STJ). Já férias vencidas/não gozadas e proporcionais na rescisão (+ 1/3), dano moral (Súmula 498 STJ) e juros de mora pelo atraso salarial (Tema 808 STF) têm natureza indenizatória e são livres de IR. A restituição segue o prazo de 5 anos do pagamento (art. 168, I, CTN c/c art. 3º, LC 118/2005).`
+      },
+      {
+        id: 'q12',
+        tax: 'IR',
+        enunciado: `Sobre regras práticas de IRPF e IRPJ destacadas no material de revisão, assinale a afirmativa correta:`,
+        opcoes: [
+          `A entrega da declaração conjunta do IRPF gera responsabilidade solidária automática entre os cônjuges.`,
+          `Na aquisição de ações por stock options, incide IR imediatamente sobre o valor das ações no momento da outorga.`,
+          `As despesas médicas no IRPF são dedutíveis sem limite (Súmula CARF 180); no IRPJ pelo lucro real, a compensação de prejuízos fiscais é limitada a 30% (Tema 591 STF).`,
+          `Os rendimentos de aplicações financeiras não sofrem incidência de IR sobre a correção monetária.`
+        ],
+        correta: 2,
+        explicacao: `Correto! Súmula CARF 180 garante dedutibilidade sem limite de despesas médicas (educação tem limite legal); Tema 591 do STF confirma a trava de 30% no lucro real. Declaração conjunta não gera solidariedade entre cônjuges; stock options só sofrem IR no ganho de capital da revenda (Tema 1.226 STJ); e o IR incide sobre a correção monetária de aplicações (Tema 1.160 STJ).`
+      }
+    ];
+
+    // =========================================================================
+    // 2. ESTADO DA APLICAÇÃO E PERSISTÊNCIA (notebookAppApi)
+    // =========================================================================
+
+    (function shuffleOptions() {
+      QUIZ_QUESTIONS.forEach(function (q) {
+        if (q.opcoes.some(function (o) { return /anteriores|nenhuma das|todas as/i.test(o); })) return;
+        const order = q.opcoes.map(function (_, i) { return i; });
+        let h = 0;
+        for (let i = 0; i < q.id.length; i++) h = (h * 31 + q.id.charCodeAt(i)) >>> 0;
+        for (let i = order.length - 1; i > 0; i--) {
+          h = (h * 1664525 + 1013904223) >>> 0;
+          const j = h % (i + 1); const t = order[i]; order[i] = order[j]; order[j] = t;
+        }
+        const right = q.opcoes[q.correta];
+        q.opcoes = order.map(function (i) { return q.opcoes[i]; });
+        q.correta = q.opcoes.indexOf(right);
+      });
+    })();
+
+    const appState = {
+      taxFilter: 'ALL',         // ALL | ESTADUAIS | FEDERAIS | ITCMD | IPVA | ICMS | II | IE | IR
+      searchQuery: '',
+      matrixMode: 'ALL',        // ALL | ANTERIORIDADE | REFORMA
+      tribunalFilter: 'ALL',    // ALL | STF | STJ | CARF
+      allDrawersOpen: false,
+      openDrawers: {},          // { ITCMD: true, ... }
+      reviewedTaxes: [],        // ['ITCMD', ...]
+      masteredCards: [],        // ['fc1', ...]
+      flashcardMode: 'ALL',     // ALL | PENDING
+      flashcardIndex: 0,
+      flashcardFlipped: false,
+      quizTaxFilter: 'ALL',     // ALL | ITCMD | ... | WRONG
+      quizIndex: 0,
+      quizAnswers: {}           // { q1: 1, ... }
+    };
+
+    let persistTimer = null;
+
+    const STORE_KEY = 'revisao-tributario-u07-u12:v1';
+    const SAVED_KEYS = ['reviewedTaxes', 'masteredCards', 'quizAnswers', 'taxFilter', 'matrixMode', 'tribunalFilter', 'flashcardMode', 'flashcardIndex', 'quizTaxFilter', 'quizIndex'];
+
+    async function loadPersistedState() {
+      let saved = null;
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.getAppState === 'function') {
+          saved = await window.notebookAppApi.getAppState();
+        } else {
+          saved = JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
+        }
+      } catch (err) {
+        const lbl = document.getElementById('sync-status-label');
+        if (lbl) lbl.textContent = 'Armazenamento bloqueado: o progresso não será salvo';
+      }
+      if (!saved || typeof saved !== 'object') return;
+      SAVED_KEYS.forEach(function (k) {
+        if (typeof saved[k] === typeof appState[k] && (Array.isArray(saved[k]) === Array.isArray(appState[k]))) appState[k] = saved[k];
+      });
+    }
+
+    async function persistState() {
+      const snap = {};
+      SAVED_KEYS.forEach(function (k) { snap[k] = appState[k]; });
+      try {
+        if (window.notebookAppApi && typeof window.notebookAppApi.setAppState === 'function') {
+          await window.notebookAppApi.setAppState(snap);
+        } else {
+          localStorage.setItem(STORE_KEY, JSON.stringify(snap));
+        }
+      } catch (err) { /* sem armazenamento disponível */ }
+    }
+
+    function schedulePersist() {
+      if (persistTimer) clearTimeout(persistTimer);
+      persistTimer = setTimeout(function () {
+        persistState();
+      }, 150);
+    }
+
+    function showStatusBanner(message) {
+      const banner = document.getElementById('global-status-banner');
+      if (!banner) return;
+      banner.textContent = message;
+      banner.hidden = false;
+      clearTimeout(showStatusBanner.t);
+      showStatusBanner.t = setTimeout(function () { banner.hidden = true; }, 3600);
+    }
+
+    // =========================================================================
+    // 3. AUXILIARES DE FILTRAGEM E ESCAPE HTML
+    // =========================================================================
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function matchesTaxFilter(taxObj) {
+      const f = appState.taxFilter;
+      if (f === 'ALL') return true;
+      if (f === 'ESTADUAIS' || f === 'FEDERAIS') return taxObj.esferaKey === f;
+      return taxObj.id === f;
+    }
+
+    function matchesTaxIdFilter(taxId) {
+      const f = appState.taxFilter;
+      if (f === 'ALL') return true;
+      if (f === 'ESTADUAIS') return taxId === 'ITCMD' || taxId === 'IPVA' || taxId === 'ICMS';
+      if (f === 'FEDERAIS') return taxId === 'II' || taxId === 'IE' || taxId === 'IR';
+      return taxId === f;
+    }
+
+    function normalizeText(text) {
+      return String(text)
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function getFilteredTaxes() {
+      const q = normalizeText(appState.searchQuery.trim());
+      return TAXES.filter(function (t) {
+        if (!matchesTaxFilter(t)) return false;
+        if (!q) return true;
+        const blob = normalizeText([
+          t.sigla, t.nome, t.cf, t.legislacao, t.fatoGerador,
+          t.momentoFG, t.baseCalculo, t.aliquotas, t.sujeitos,
+          t.reforma, t.anterioridade.detalhe,
+          t.pontosChave.map(function (p) { return p.titulo + ' ' + p.texto; }).join(' '),
+          t.regrasPraticas.join(' ')
+        ].join(' '));
+        return blob.indexOf(q) !== -1;
+      });
+    }
+
+    function getFilteredJuris() {
+      const q = normalizeText(appState.searchQuery.trim());
+      return JURISPRUDENCIA.filter(function (j) {
+        if (!matchesTaxIdFilter(j.tax)) return false;
+        if (appState.tribunalFilter !== 'ALL' && j.tribunal !== appState.tribunalFilter) return false;
+        if (!q) return true;
+        const blob = normalizeText(j.tax + ' ' + j.tribunal + ' ' + j.ref + ' ' + j.tese + ' ' + j.nota);
+        return blob.indexOf(q) !== -1;
+      });
+    }
+
+    function getFilteredFlashcards() {
+      return FLASHCARDS.filter(function (c) {
+        if (appState.flashcardMode === 'PENDING' && appState.masteredCards.indexOf(c.id) !== -1) {
+          return false;
+        }
+        return true;
+      });
+    }
+
+    function getFilteredQuizQuestions() {
+      const f = appState.quizTaxFilter;
+      if (f === 'ALL') return QUIZ_QUESTIONS;
+      if (f === 'WRONG') {
+        return QUIZ_QUESTIONS.filter(function (q) {
+          const ans = appState.quizAnswers[q.id];
+          return typeof ans === 'number' && ans !== q.correta;
+        });
+      }
+      return QUIZ_QUESTIONS.filter(function (q) { return q.tax === f; });
+    }
+
+    // =========================================================================
+    // 4. RENDERIZAÇÃO DOS PAINÉIS
+    // =========================================================================
+
+    function renderKPIs() {
+      const reviewedCount = appState.reviewedTaxes.length;
+      const cardsCount = appState.masteredCards.length;
+      const answeredIds = Object.keys(appState.quizAnswers);
+      const answeredCount = answeredIds.length;
+      let correctCount = 0;
+      QUIZ_QUESTIONS.forEach(function (q) {
+        if (appState.quizAnswers[q.id] === q.correta) correctCount++;
+      });
+      const pct = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0;
+
+      const elRev = document.getElementById('kpi-reviewed');
+      const elRevNote = document.getElementById('kpi-reviewed-note');
+      const elJuris = document.getElementById('kpi-juris');
+      const elCards = document.getElementById('kpi-cards');
+      const elCardsNote = document.getElementById('kpi-cards-note');
+      const elQuiz = document.getElementById('kpi-quiz');
+      const elQuizNote = document.getElementById('kpi-quiz-note');
+
+      if (elRev) elRev.textContent = reviewedCount + ' / ' + TAXES.length;
+      if (elRevNote) {
+        elRevNote.textContent = reviewedCount === TAXES.length
+          ? 'Todos os ' + TAXES.length + ' impostos revisados'
+          : (TAXES.length - reviewedCount) + ' pendente(s) · 3 Estaduais · 3 Federais';
+        elRevNote.className = reviewedCount === TAXES.length ? 'figure-delta positive' : 'figure-delta';
+      }
+      if (elJuris) elJuris.textContent = String(JURISPRUDENCIA.length);
+      if (elCards) elCards.textContent = cardsCount + ' / ' + FLASHCARDS.length;
+      if (elCardsNote) {
+        elCardsNote.textContent = cardsCount === FLASHCARDS.length
+          ? 'Todas as pegadinhas dominadas'
+          : (FLASHCARDS.length - cardsCount) + ' cartão(ões) a fixar';
+        elCardsNote.className = cardsCount === FLASHCARDS.length ? 'figure-delta positive' : 'figure-delta';
+      }
+      [[elRev, reviewedCount / TAXES.length], [elCards, cardsCount / FLASHCARDS.length], [elQuiz, answeredCount / QUIZ_QUESTIONS.length]].forEach(function (p) {
+        if (p[0]) p[0].closest('.figure-card').style.setProperty('--p', p[1]);
+      });
+      if (elQuiz) elQuiz.textContent = pct + '%';
+      if (elQuizNote) {
+        elQuizNote.textContent = correctCount + (correctCount === 1 ? ' acerto' : ' acertos') + ' em ' + answeredCount + ' de ' + QUIZ_QUESTIONS.length + ' respondidas';
+        elQuizNote.className = pct >= 70 && answeredCount > 0 ? 'figure-delta positive' : 'figure-delta';
+      }
+    }
+
+    function renderFilterButtonsState() {
+      const taxBtns = document.querySelectorAll('[data-tax-filter]');
+      taxBtns.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.dataset.taxFilter === appState.taxFilter ? 'true' : 'false');
+      });
+      const matrixBtns = document.querySelectorAll('[data-matrix-mode]');
+      matrixBtns.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.dataset.matrixMode === appState.matrixMode ? 'true' : 'false');
+      });
+      const tribBtns = document.querySelectorAll('[data-tribunal]');
+      tribBtns.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.dataset.tribunal === appState.tribunalFilter ? 'true' : 'false');
+      });
+      const cardBtns = document.querySelectorAll('[data-card-mode]');
+      cardBtns.forEach(function (btn) {
+        btn.setAttribute('aria-pressed', btn.dataset.cardMode === appState.flashcardMode ? 'true' : 'false');
+      });
+      const quizSelect = document.getElementById('quiz-tax-select');
+      if (quizSelect) quizSelect.value = appState.quizTaxFilter;
+    }
+
+    function renderTaxCards() {
+      const container = document.getElementById('tax-cards-container');
+      if (!container) return;
+
+      const list = getFilteredTaxes();
+      if (list.length === 0) {
+        container.innerHTML =
+          '<div class="empty-state" style="grid-column: 1 / -1;">' +
+            '<span class="label-caps">Nenhum imposto encontrado</span>' +
+            '<p style="margin: 0;">A combinação atual de filtro e busca não retornou fichas de imposto.</p>' +
+            '<button type="button" class="btn btn-primary" onclick="clearGlobalFilters()">Restaurar todos os impostos</button>' +
+          '</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(function (t) {
+        const isReviewed = appState.reviewedTaxes.indexOf(t.id) !== -1;
+        const isOpen = appState.allDrawersOpen || !!appState.openDrawers[t.id];
+        const esferaClass = t.esferaKey === 'ESTADUAIS' ? 'estadual' : 'federal';
+
+        const pontosHtml = t.pontosChave.map(function (pk) {
+          return (
+            '<div class="ponto-chave-box">' +
+              '<p class="ponto-chave-title">Atenção — Ponto-Chave: ' + escapeHtml(pk.titulo) + '</p>' +
+              '<p class="ponto-chave-text">' + escapeHtml(pk.texto) + '</p>' +
+            '</div>'
+          );
+        }).join('');
+
+        const regrasHtml = t.regrasPraticas.map(function (r) {
+          return '<li>' + escapeHtml(r) + '</li>';
+        }).join('');
+
+        return (
+          '<div class="tax-card-wrap">' +
+            '<article class="tax-card' + (isReviewed ? ' reviewed' : '') + '">' +
+              '<div class="tax-card-header">' +
+                '<div class="tax-title-wrap">' +
+                  '<div class="tax-sigla-row">' +
+                    '<span class="stamp-tag ' + esferaClass + '">' + escapeHtml(t.esfera) + '</span>' +
+                    '<span class="stamp-tag">' + escapeHtml(t.funcao) + '</span>' +
+                    '<span class="label-caps">' + escapeHtml(t.cf) + '</span>' +
+                  '</div>' +
+                  '<h3>' + escapeHtml(t.sigla) + ' — ' + escapeHtml(t.nome) + '</h3>' +
+                  '<span class="label-caps" style="text-transform: none; letter-spacing: 0;">' + escapeHtml(t.legislacao) + '</span>' +
+                '</div>' +
+                '<button type="button" class="btn ' + (isReviewed ? 'btn-positive' : 'btn-subtle') + '" onclick="toggleTaxReviewed(\'' + t.id + '\')">' +
+                  (isReviewed ? 'Revisado ✓' : 'Marcar revisão') +
+                '</button>' +
+              '</div>' +
+
+              '<div class="tax-specs">' +
+                '<div class="spec-item"><span class="label-caps">Fato Gerador e Momento</span><span class="spec-value">' + escapeHtml(t.momentoFG) + '</span></div>' +
+                '<div class="spec-item"><span class="label-caps">Base de Cálculo</span><span class="spec-value">' + escapeHtml(t.baseCalculo) + '</span></div>' +
+                '<div class="spec-item"><span class="label-caps">Alíquotas</span><span class="spec-value">' + escapeHtml(t.aliquotas) + '</span></div>' +
+                '<div class="spec-item"><span class="label-caps">Sujeito Passivo / Ativo</span><span class="spec-value">' + escapeHtml(t.sujeitos) + '</span></div>' +
+              '</div>' +
+
+              '<div class="ponto-chave-list">' + pontosHtml + '</div>' +
+
+              '<div class="rules-toggle-row">' +
+                '<span class="label-caps">' + t.regrasPraticas.length + ' regras práticas e exceções</span>' +
+                '<button type="button" class="btn btn-secondary" data-drawer-btn="' + t.id + '" aria-controls="drawer-' + t.id + '" aria-expanded="' + (isOpen ? 'true' : 'false') + '" onclick="toggleTaxDrawer(\'' + t.id + '\')">' +
+                  (isOpen ? 'Ocultar regras práticas' : 'Ver regras práticas e RS') +
+                '</button>' +
+              '</div>' +
+
+              '<div class="rules-drawer' + (isOpen ? ' is-open' : '') + '" id="drawer-' + t.id + '"><div class="rules-inner">' +
+                '<span class="label-caps">Regras práticas, imunidades e detalhes de prova</span>' +
+                '<ul class="rules-list">' + regrasHtml + '</ul>' +
+                '<p class="juris-nota" style="margin: 0;"><strong>Fato gerador completo:</strong> ' + escapeHtml(t.fatoGerador) + '</p>' +
+              '</div></div>' +
+            '</article>' +
+          '</div>'
+        );
+      }).join('');
+    }
+
+    function renderComparisonMatrix() {
+      const tbody = document.getElementById('matrix-table-body');
+      const countLabel = document.getElementById('matrix-count-label');
+      if (!tbody) return;
+
+      const list = getFilteredTaxes();
+      if (countLabel) {
+        countLabel.textContent = 'Exibindo ' + list.length + ' de ' + TAXES.length + ' impostos';
+      }
+
+      if (list.length === 0) {
+        tbody.innerHTML =
+          '<tr><td colspan="6">Nenhum imposto corresponde ao filtro atual. Clique em "Limpar" para restaurar o quadro.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = list.map(function (t) {
+        const antBadgeClass = t.anterioridade.noventena.indexOf('Exceção') !== -1 ? 'excecao' : 'estadual';
+        const highlightAnt = appState.matrixMode === 'ANTERIORIDADE' && t.anterioridade.noventena.indexOf('Exceção') !== -1;
+        const highlightRef = appState.matrixMode === 'REFORMA' && (t.id === 'ITCMD' || t.id === 'IPVA' || t.id === 'ICMS');
+        const rowClass = (highlightAnt || highlightRef) ? ' class="is-highlighted"' : '';
+
+        return (
+          '<tr' + rowClass + '>' +
+            '<td data-label="Imposto"><strong>' + escapeHtml(t.sigla) + '</strong><br><span class="label-caps">' + escapeHtml(t.esfera) + '</span></td>' +
+            '<td data-label="Fato gerador e momento">' + escapeHtml(t.momentoFG) + '</td>' +
+            '<td data-label="Base de cálculo">' + escapeHtml(t.baseCalculo) + '</td>' +
+            '<td data-label="Alíquotas e alteração">' + escapeHtml(t.aliquotas) + '</td>' +
+            '<td data-label="Anterioridade / noventena">' +
+              '<span class="stamp-tag ' + antBadgeClass + '" style="margin-bottom: var(--space-xs);">' +
+                escapeHtml(t.anterioridade.exercicio + ' · Noventena: ' + t.anterioridade.noventena) +
+              '</span><br>' +
+              '<span>' + escapeHtml(t.anterioridade.detalhe) + '</span>' +
+            '</td>' +
+            '<td data-label="Exceções, imunidades e reforma">' + escapeHtml(t.reforma) + '</td>' +
+          '</tr>'
+        );
+      }).join('');
+    }
+
+    function renderJurisprudence() {
+      const container = document.getElementById('juris-container');
+      const countLabel = document.getElementById('juris-count-label');
+      if (!container) return;
+
+      const list = getFilteredJuris();
+      if (countLabel) {
+        countLabel.textContent = list.length + ' precedente(s) exibido(s)';
+      }
+
+      if (list.length === 0) {
+        container.innerHTML =
+          '<div class="empty-state" style="grid-column: 1 / -1;">' +
+            '<span class="label-caps">Nenhum precedente encontrado</span>' +
+            '<p style="margin: 0;">Nenhuma súmula ou tema corresponde aos filtros atuais de tribunal, imposto e busca.</p>' +
+            '<button type="button" class="btn btn-primary" onclick="clearGlobalFilters()">Limpar filtros</button>' +
+          '</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(function (j) {
+        const tribClass = j.tribunal === 'STJ' ? ' is-stj' : (j.tribunal === 'CARF' ? ' is-carf' : '');
+        return (
+          '<article class="juris-card' + tribClass + '">' +
+            '<div class="juris-header">' +
+              '<span class="stamp-tag">' + escapeHtml(j.tax) + '</span>' +
+              '<span class="label-caps">' + escapeHtml(j.tribunal) + '</span>' +
+            '</div>' +
+            '<h3 class="juris-ref">' + escapeHtml(j.ref) + '</h3>' +
+            '<p class="juris-tese">' + escapeHtml(j.tese) + '</p>' +
+            '<p class="juris-nota">' + escapeHtml(j.nota) + '</p>' +
+          '</article>'
+        );
+      }).join('');
+    }
+
+    function renderQuiz() {
+      const stage = document.getElementById('quiz-stage');
+      const counter = document.getElementById('quiz-counter');
+      const scoreInline = document.getElementById('quiz-score-inline');
+      const bar = document.getElementById('quiz-progress-bar');
+      const btnPrev = document.getElementById('btn-quiz-prev');
+      const btnNext = document.getElementById('btn-quiz-next');
+      if (!stage) return;
+
+      const list = getFilteredQuizQuestions();
+      const totalAnswered = Object.keys(appState.quizAnswers).length;
+      let totalCorrect = 0;
+      QUIZ_QUESTIONS.forEach(function (q) {
+        if (appState.quizAnswers[q.id] === q.correta) totalCorrect++;
+      });
+      if (scoreInline) {
+        scoreInline.textContent = totalCorrect + ' acertos · ' + totalAnswered + ' de ' + QUIZ_QUESTIONS.length + ' respondidas';
+      }
+
+      if (list.length === 0) {
+        if (counter) counter.textContent = '0 de 0';
+        if (bar) bar.style.width = '0%';
+        if (btnPrev) btnPrev.disabled = true;
+        if (btnNext) btnNext.disabled = true;
+        stage.innerHTML =
+          '<div class="empty-state" style="padding: var(--space-lg);">' +
+            '<span class="label-caps">Nenhuma questão nesta seleção</span>' +
+            '<p style="margin: 0;">Você não tem questões erradas neste filtro. Selecione "Todos os impostos" para praticar.</p>' +
+            '<button type="button" class="btn btn-primary" onclick="setQuizTaxFilter(\'ALL\')">Ver todas as 12 questões</button>' +
+          '</div>';
+        return;
+      }
+
+      if (appState.quizIndex >= list.length) appState.quizIndex = list.length - 1;
+      if (appState.quizIndex < 0) appState.quizIndex = 0;
+
+      const q = list[appState.quizIndex];
+      const userAnswer = appState.quizAnswers[q.id];
+      const hasAnswered = typeof userAnswer === 'number';
+      const letras = ['A', 'B', 'C', 'D'];
+
+      if (counter) counter.textContent = 'Questão ' + (appState.quizIndex + 1) + ' de ' + list.length + ' (' + q.tax + ')';
+      if (bar) bar.style.width = Math.round(((appState.quizIndex + 1) / list.length) * 100) + '%';
+      if (btnPrev) btnPrev.disabled = appState.quizIndex === 0;
+      if (btnNext) btnNext.disabled = appState.quizIndex >= list.length - 1;
+
+      const optionsHtml = q.opcoes.map(function (optText, idx) {
+        let cls = 'quiz-option';
+        if (hasAnswered) {
+          if (idx === userAnswer && idx === q.correta) cls += ' selected-correct';
+          else if (idx === userAnswer && idx !== q.correta) cls += ' selected-wrong';
+          else if (idx === q.correta) cls += ' reveal-correct';
+        }
+        return (
+          '<button type="button" class="' + cls + '"' + (hasAnswered ? ' aria-disabled="true"' : '') + ' onclick="selectQuizOption(\'' + q.id + '\', ' + idx + ')">' +
+            '<span class="quiz-letter">' + letras[idx] + '</span>' +
+            '<span>' + escapeHtml(optText) + '</span>' +
+          '</button>'
+        );
+      }).join('');
+
+      let feedbackHtml = '';
+      if (hasAnswered) {
+        const isCorrect = userAnswer === q.correta;
+        feedbackHtml =
+          '<div role="status" class="quiz-feedback ' + (isCorrect ? 'is-correct' : 'is-wrong') + '">' +
+            '<strong>' + (isCorrect ? 'Resposta correta!' : 'Atenção à pegadinha — alternativa correta: ' + letras[q.correta] + '.') + '</strong> ' +
+            escapeHtml(q.explicacao) +
+            ' <button type="button" class="btn btn-subtle" onclick="retryQuestion(\'' + q.id + '\')">Refazer esta questão</button>' +
+          '</div>';
+      }
+
+      stage.innerHTML =
+        '<div style="display: flex; flex-direction: column; gap: var(--space-md);">' +
+          '<div class="filter-row"><span class="stamp-tag">' + escapeHtml(q.tax) + '</span></div>' +
+          '<p class="quiz-question-text">' + escapeHtml(q.enunciado) + '</p>' +
+          '<div class="quiz-options">' + optionsHtml + '</div>' +
+          feedbackHtml +
+        '</div>';
+    }
+
+    function renderFlashcards() {
+      const stage = document.getElementById('flashcard-stage');
+      if (!stage) return;
+      const $ = function (id) { return document.getElementById(id); };
+      const list = getFilteredFlashcards();
+      if (list.length === 0) {
+        $('flashcard-counter').textContent = '0 / 0';
+        ['btn-card-prev', 'btn-card-next', 'btn-card-flip', 'btn-card-master'].forEach(function (id) { $(id).disabled = true; });
+        $('flashcard-master-status').textContent = 'Todos os cartões dominados';
+        stage.innerHTML = '<div class="fc-inner"><div class="fc-face"><div>' +
+          '<span class="flashcard-face-label is-answer">Revisão concluída</span>' +
+          '<p class="flashcard-prompt" style="margin-top: var(--space-sm);">Todos os ' + FLASHCARDS.length + ' cartões foram marcados como dominados.</p>' +
+          '<p class="flashcard-answer" style="margin-top: var(--space-sm);">Volte para "Todos" para revisar de novo antes da prova.</p></div></div></div>';
+        return;
+      }
+      appState.flashcardIndex = Math.max(0, Math.min(appState.flashcardIndex, list.length - 1));
+      const card = list[appState.flashcardIndex];
+      const isMastered = appState.masteredCards.indexOf(card.id) !== -1;
+      const fl = appState.flashcardFlipped;
+      $('flashcard-counter').textContent = (appState.flashcardIndex + 1) + ' / ' + list.length;
+      $('btn-card-prev').disabled = appState.flashcardIndex === 0;
+      $('btn-card-next').disabled = appState.flashcardIndex >= list.length - 1;
+      $('btn-card-flip').disabled = false;
+      $('btn-card-flip').textContent = fl ? 'Voltar à pegadinha' : 'Ver regra prática';
+      $('btn-card-master').disabled = false;
+      $('btn-card-master').textContent = isMastered ? 'Remover de dominados' : 'Marcar como dominado';
+      $('flashcard-master-status').textContent = isMastered ? 'Cartão dominado ✓' : 'Pendente de fixação';
+      stage.innerHTML =
+        '<div class="fc-inner' + (fl ? ' is-flipped' : '') + '">' +
+          '<div class="fc-face fc-front" aria-hidden="' + fl + '"><div>' +
+            '<div class="fc-head"><span class="flashcard-face-label">Pegadinha / Questão de Prova</span><span class="stamp-tag">' + escapeHtml(card.tax) + '</span></div>' +
+            '<p class="flashcard-prompt">' + escapeHtml(card.pegadinha) + '</p></div>' +
+            '<span class="label-caps">Tente responder mentalmente e vire o cartão</span></div>' +
+          '<div class="fc-face fc-back" aria-hidden="' + !fl + '"><div>' +
+            '<div class="fc-head"><span class="flashcard-face-label is-answer">Regra Prática &amp; Gabarito</span><span class="stamp-tag">' + escapeHtml(card.tax) + '</span></div>' +
+            '<p class="flashcard-answer">' + escapeHtml(card.regra) + '</p></div>' +
+            '<p class="flashcard-cite">Fundamento: ' + escapeHtml(card.cite) + '</p></div>' +
+        '</div>';
+    }
+
+    function renderAll() {
+      renderFilterButtonsState();
+      renderKPIs();
+      renderTaxCards();
+      renderComparisonMatrix();
+      renderJurisprudence();
+      renderQuiz();
+      renderFlashcards();
+    }
+
+    // =========================================================================
+    // 5. HANDLERS DE INTERAÇÃO (funções declaradas / hoisted)
+    // =========================================================================
+
+    function setTaxFilter(filterVal) {
+      appState.taxFilter = filterVal;
+      renderFilterButtonsState();
+      renderTaxCards();
+      renderComparisonMatrix();
+      renderJurisprudence();
+      schedulePersist();
+    }
+
+    let searchTimer = null;
+    function handleSearchInput(val) {
+      appState.searchQuery = val || '';
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () {
+        renderTaxCards();
+        renderComparisonMatrix();
+        renderJurisprudence();
+      }, 120);
+    }
+
+    function clearGlobalFilters() {
+      appState.taxFilter = 'ALL';
+      appState.searchQuery = '';
+      appState.tribunalFilter = 'ALL';
+      appState.matrixMode = 'ALL';
+      const searchInput = document.getElementById('global-search');
+      if (searchInput) searchInput.value = '';
+      renderFilterButtonsState();
+      renderTaxCards();
+      renderComparisonMatrix();
+      renderJurisprudence();
+      schedulePersist();
+    }
+
+    function toggleTaxReviewed(taxId) {
+      const idx = appState.reviewedTaxes.indexOf(taxId);
+      if (idx === -1) {
+        appState.reviewedTaxes.push(taxId);
+      } else {
+        appState.reviewedTaxes.splice(idx, 1);
+      }
+      renderKPIs();
+      renderTaxCards();
+      schedulePersist();
+    }
+
+    function toggleTaxDrawer(taxId) {
+      if (appState.allDrawersOpen) {
+        appState.allDrawersOpen = false;
+        TAXES.forEach(function (t) {
+          appState.openDrawers[t.id] = (t.id !== taxId);
+        });
+      } else {
+        appState.openDrawers[taxId] = !appState.openDrawers[taxId];
+      }
+      const btnAll = document.getElementById('btn-toggle-all-rules');
+      if (btnAll) btnAll.textContent = appState.allDrawersOpen ? 'Recolher todas as regras' : 'Expandir todas as regras';
+      syncDrawers();
+    }
+
+    function toggleAllDrawers() {
+      appState.allDrawersOpen = !appState.allDrawersOpen;
+      TAXES.forEach(function (t) {
+        appState.openDrawers[t.id] = appState.allDrawersOpen;
+      });
+      const btnAll = document.getElementById('btn-toggle-all-rules');
+      if (btnAll) btnAll.textContent = appState.allDrawersOpen ? 'Recolher todas as regras' : 'Expandir todas as regras';
+      syncDrawers();
+    }
+
+    function setMatrixMode(mode) {
+      appState.matrixMode = mode;
+      renderFilterButtonsState();
+      renderComparisonMatrix();
+      schedulePersist();
+    }
+
+    function setTribunalFilter(tribunal) {
+      appState.tribunalFilter = tribunal;
+      renderFilterButtonsState();
+      renderJurisprudence();
+      schedulePersist();
+    }
+
+    function setQuizTaxFilter(val) {
+      appState.quizTaxFilter = val;
+      appState.quizIndex = 0;
+      renderFilterButtonsState();
+      renderQuiz();
+      schedulePersist();
+    }
+
+    function selectQuizOption(questionId, optionIdx) {
+      if (typeof appState.quizAnswers[questionId] === 'number') return;
+      appState.quizAnswers[questionId] = optionIdx;
+      renderKPIs();
+      renderQuiz();
+      schedulePersist();
+    }
+
+    function prevQuestion() {
+      if (appState.quizIndex > 0) {
+        appState.quizIndex--;
+        renderQuiz();
+        schedulePersist();
+      }
+    }
+
+    function nextQuestion() {
+      const list = getFilteredQuizQuestions();
+      if (appState.quizIndex < list.length - 1) {
+        appState.quizIndex++;
+        renderQuiz();
+        schedulePersist();
+      }
+    }
+
+    function resetQuiz(btn) {
+      if (btn && btn.dataset.armed !== 'true') {
+        btn.dataset.armed = 'true';
+        btn.textContent = 'Clique novamente para zerar';
+        setTimeout(function () {
+          if (btn.dataset.armed === 'true') {
+            btn.dataset.armed = 'false';
+            btn.textContent = 'Reiniciar simulado';
+          }
+        }, 3500);
+        return;
+      }
+      if (btn) {
+        btn.dataset.armed = 'false';
+        btn.textContent = 'Reiniciar simulado';
+      }
+      appState.quizAnswers = {};
+      appState.quizIndex = 0;
+      renderKPIs();
+      renderQuiz();
+      schedulePersist();
+      showStatusBanner('Simulado reiniciado. Todas as 12 questões estão disponíveis.');
+    }
+
+    function setFlashcardMode(mode) {
+      appState.flashcardMode = mode;
+      appState.flashcardIndex = 0;
+      appState.flashcardFlipped = false;
+      renderFilterButtonsState();
+      renderFlashcards();
+      schedulePersist();
+    }
+
+    function prevFlashcard() {
+      if (appState.flashcardIndex > 0) {
+        appState.flashcardIndex--;
+        appState.flashcardFlipped = false;
+        renderFlashcards();
+        schedulePersist();
+      }
+    }
+
+    function nextFlashcard() {
+      const list = getFilteredFlashcards();
+      if (appState.flashcardIndex < list.length - 1) {
+        appState.flashcardIndex++;
+        appState.flashcardFlipped = false;
+        renderFlashcards();
+        schedulePersist();
+      }
+    }
+
+    function toggleCardMastered() {
+      const list = getFilteredFlashcards();
+      if (list.length === 0) return;
+      const card = list[appState.flashcardIndex];
+      if (!card) return;
+      const idx = appState.masteredCards.indexOf(card.id);
+      if (idx === -1) {
+        appState.masteredCards.push(card.id);
+      } else {
+        appState.masteredCards.splice(idx, 1);
+      }
+      appState.flashcardFlipped = false;
+      renderKPIs();
+      renderFlashcards();
+      schedulePersist();
+    }
+
+    function resetAllProgress(btn) {
+      if (btn && btn.dataset.armed !== 'true') {
+        btn.dataset.armed = 'true';
+        btn.textContent = 'Confirmar zerar tudo';
+        setTimeout(function () {
+          if (btn.dataset.armed === 'true') {
+            btn.dataset.armed = 'false';
+            btn.textContent = 'Zerar progresso';
+          }
+        }, 3500);
+        return;
+      }
+      if (btn) {
+        btn.dataset.armed = 'false';
+        btn.textContent = 'Zerar progresso';
+      }
+      appState.reviewedTaxes = [];
+      appState.masteredCards = [];
+      appState.quizAnswers = {};
+      appState.quizIndex = 0;
+      appState.flashcardIndex = 0;
+      appState.flashcardFlipped = false;
+      renderAll();
+      schedulePersist();
+      showStatusBanner('Todo o progresso de revisão, cartões e simulado foi zerado.');
+    }
+
+    function exportStudySummary() {
+      const lines = [
+        'RESUMO PESSOAL DE REVISÃO PRÉ-PROVA — DIREITO TRIBUTÁRIO (UNIDADES 07 A 12)',
+        '========================================================================',
+        '',
+        'Impostos revisados (' + appState.reviewedTaxes.length + '/' + TAXES.length + '): ' +
+          (appState.reviewedTaxes.length ? appState.reviewedTaxes.join(', ') : 'Nenhum marcado ainda'),
+        'Pegadinhas dominadas: ' + appState.masteredCards.length + '/' + FLASHCARDS.length,
+        ''
+      ];
+
+      const wrongQuestions = QUIZ_QUESTIONS.filter(function (q) {
+        const ans = appState.quizAnswers[q.id];
+        return typeof ans === 'number' && ans !== q.correta;
+      });
+
+      lines.push('QUESTÕES ERRADAS NO SIMULADO PARA REVISAR (' + wrongQuestions.length + '):');
+      if (wrongQuestions.length === 0) {
+        lines.push('- Nenhuma questão errada registrada até o momento.');
+      } else {
+        wrongQuestions.forEach(function (q) {
+          lines.push('[' + q.tax + '] ' + q.enunciado);
+          lines.push('  Explicação: ' + q.explicacao);
+          lines.push('');
+        });
+      }
+
+      lines.push('');
+      lines.push('PONTOS-CHAVE PRIORITÁRIOS (ATENÇÃO):');
+      TAXES.forEach(function (t) {
+        lines.push('--- ' + t.sigla + ' (' + t.cf + ') ---');
+        t.pontosChave.forEach(function (pk) {
+          lines.push('* ' + pk.titulo + ': ' + pk.texto);
+        });
+        lines.push('');
+      });
+
+      const content = lines.join('\n');
+
+      if (window.notebookAppApi && typeof window.notebookAppApi.triggerFileDownload === 'function') {
+        window.notebookAppApi.triggerFileDownload({
+          content: content,
+          contentType: 'text/plain',
+          encoding: 'UTF-8',
+          filename: 'revisao-direito-tributario-u07-u12.txt'
+        });
+        showStatusBanner('Resumo exportado como revisao-direito-tributario-u07-u12.txt.');
+      } else {
+        const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'revisao-direito-tributario-u07-u12.txt';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+        showStatusBanner('Resumo exportado como revisao-direito-tributario-u07-u12.txt.');
+      }
+    }
+
+    // =========================================================================
+    // 5b. MELHORIAS DE FLUIDEZ E ACESSIBILIDADE
+    // =========================================================================
+
+    function syncDrawers() {
+      document.querySelectorAll('[data-drawer-btn]').forEach(function (b) {
+        const id = b.dataset.drawerBtn;
+        const open = appState.allDrawersOpen || !!appState.openDrawers[id];
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+        b.textContent = open ? 'Ocultar regras práticas' : 'Ver regras práticas e RS';
+        const d = document.getElementById('drawer-' + id);
+        if (d) d.classList.toggle('is-open', open);
+      });
+    }
+
+    function retryQuestion(id) {
+      delete appState.quizAnswers[id];
+      renderKPIs();
+      renderQuiz();
+      schedulePersist();
+    }
+
+    function flipFlashcard() {
+      appState.flashcardFlipped = !appState.flashcardFlipped;
+      const inner = document.querySelector('#flashcard-stage .fc-inner');
+      if (!inner || !inner.querySelector('.fc-front')) return;
+      const fl = appState.flashcardFlipped;
+      inner.classList.toggle('is-flipped', fl);
+      inner.querySelector('.fc-front').setAttribute('aria-hidden', fl ? 'true' : 'false');
+      inner.querySelector('.fc-back').setAttribute('aria-hidden', fl ? 'false' : 'true');
+      document.getElementById('btn-card-flip').textContent = fl ? 'Voltar à pegadinha' : 'Ver regra prática';
+    }
+
+    // Re-renders recriam o DOM: devolve o foco ao mesmo controle para quem usa teclado.
+    [['renderTaxCards', 'tax-cards-container'], ['renderComparisonMatrix', 'matrix-table-body'],
+     ['renderJurisprudence', 'juris-container'], ['renderQuiz', 'quiz-stage'], ['renderFlashcards', 'flashcard-stage']
+    ].forEach(function (pair) {
+      const fn = window[pair[0]], sel = 'button,select,input,a';
+      window[pair[0]] = function () {
+        const c = document.getElementById(pair[1]), a = document.activeElement;
+        const idx = (c && a && c.contains(a)) ? Array.prototype.indexOf.call(c.querySelectorAll(sel), a) : -1;
+        fn.apply(this, arguments);
+        if (idx > -1) { const n = c.querySelectorAll(sel)[idx]; if (n) n.focus({ preventScroll: true }); }
+      };
+    });
+
+    function initEnhancements() {
+      const links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) links.forEach(function (l) { l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id); });
+          });
+        }, { rootMargin: '-30% 0px -60% 0px' });
+        ['secao-fichas', 'secao-quadro', 'secao-juris', 'secao-treino'].forEach(function (id) {
+          const el = document.getElementById(id); if (el) io.observe(el);
+        });
+      }
+      // Atalhos com o foco dentro do painel: A–D responde, setas navegam.
+      document.addEventListener('keydown', function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey || !e.target.closest) return;
+        if (/^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+        const inQuiz = e.target.closest('[aria-labelledby="quiz-panel-title"]');
+        const inCard = e.target.closest('[aria-labelledby="flashcard-panel-title"]');
+        if (!inQuiz && !inCard) return;
+        if (e.key === 'ArrowRight') { (inQuiz ? nextQuestion : nextFlashcard)(); e.preventDefault(); }
+        else if (e.key === 'ArrowLeft') { (inQuiz ? prevQuestion : prevFlashcard)(); e.preventDefault(); }
+        else if (inQuiz && /^[a-dA-D]$/.test(e.key)) {
+          const q = getFilteredQuizQuestions()[appState.quizIndex];
+          if (q) selectQuizOption(q.id, 'abcd'.indexOf(e.key.toLowerCase()));
+        }
+      });
+    }
+
+    // =========================================================================
+    // 6. INICIALIZAÇÃO SEGURA
+    // =========================================================================
+
+    async function initApp() {
+      await loadPersistedState();
+      renderAll();
+      initEnhancements();
+      if (window.notebookAppApi && typeof window.notebookAppApi.notifyAppReady === 'function') {
+        window.notebookAppApi.notifyAppReady();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initApp();
+    });
+  </script>
+  <script>
+    // PWA: registro do service worker e botão "Instalar app" (Chrome/Android)
+    (function () {
+      if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+        window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); });
+      }
+      var deferred = null, btn = document.getElementById('btn-install');
+      window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; if (btn) btn.hidden = false; });
+      if (btn) btn.addEventListener('click', function () {
+        if (!deferred) return;
+        deferred.prompt();
+        deferred.userChoice.finally(function () { deferred = null; btn.hidden = true; });
+      });
+      window.addEventListener('appinstalled', function () {
+        if (btn) btn.hidden = true;
+        if (typeof showStatusBanner === 'function') showStatusBanner('App instalado. Abra pelo ícone na tela inicial.');
+      });
+    })();
+  </script>
+</body>
+</html>
